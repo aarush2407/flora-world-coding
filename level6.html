@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Adventure - Level 6</title>
+    <style>
+        /* THE CURVY DESIGN SYSTEM */
+        :root {
+            --main-color: #16a085;    /* Teal Treasure */
+            --list-blue: #2980b9;     /* Deep Blue */
+            --sunny-yellow: #f1c40f; 
+            --bg-color: #f9fbfd;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* WAVY HEADER */
+        header {
+            background-color: var(--main-color);
+            height: 250px;
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding-top: 40px;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--bg-color);
+            border-radius: 100% 100% 0 0;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 10;
+            position: relative;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        nav a.active { background: var(--sunny-yellow); color: #2d3436; }
+
+        /* MASCOT */
+        .mascot-container {
+            text-align: center;
+            margin-top: -60px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .mascot {
+            width: 130px;
+            height: 130px;
+            background: white;
+            border-radius: 50%;
+            border: 6px solid var(--list-blue);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .mascot:hover { transform: scale(1.1); }
+
+        /* CONTENT CARD */
+        .card {
+            background: white;
+            width: 90%;
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 50px;
+            box-shadow: 0 20px 40px rgba(22, 160, 133, 0.1);
+            border: 10px solid #FFFFFF;
+            outline: 4px solid var(--main-color);
+        }
+
+        .editor-box {
+            border-radius: 30px;
+            overflow: hidden;
+            border: 4px solid #EEE;
+            margin: 30px 0;
+        }
+
+        /* NEXT BUTTON */
+        .next-btn {
+            display: inline-block;
+            background: var(--list-blue);
+            color: white;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            border-radius: 60px;
+            font-weight: bold;
+            box-shadow: 0 10px 0 #1c5982;
+            transition: 0.2s;
+        }
+
+        .next-btn:hover { transform: translateY(4px); box-shadow: 0 6px 0 #1c5982; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Lvl 1</a>
+            <a href="level2.html">Lvl 2</a>
+            <a href="level3.html">Lvl 3</a>
+            <a href="level4.html">Lvl 4</a>
+            <a href="level5.html">Lvl 5</a>
+            <a href="level6.html" class="active">Lvl 6</a>
+        </nav>
+        <h1>💎 Level 6: The Treasure List</h1>
+        <p>Learn how to store a whole collection of items in one place!</p>
+    </header>
+
+    <div class="mascot-container">
+        <div style="background: white; padding: 10px; border-radius: 15px; border: 2px solid var(--main-color); display: inline-block; margin-bottom: 10px;">
+            "A list is like a grocery bag for your data!" 🍎
+        </div><br>
+        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Treasure&backgroundColor=16a085" class="mascot" id="mascot">
+    </div>
+
+    <div class="card">
+        <h2>What is a List? 📂</h2>
+        <p>In Python, we put items inside <b>square brackets [ ]</b> and separate them with commas. <br>
+           <b>Example:</b> <code>fruits = ["Apple", "Banana", "Cherry"]</code></p>
+
+        
+
+        <div class="editor-box">
+            <iframe src="https://trinket.io/embed/python3/d1f124e1d4cc?runMode=console" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+
+        <p><b>Challenge:</b> Add your favorite food to the list inside the <code>[ ]</code> and press Play!</p>
+        
+        <div style="text-align: center;">
+            <a href="level7.html" class="next-btn">Next: Level 7 ➔</a>
+        </div>
+    </div>
+
+    <script>
+        const mascot = document.getElementById('mascot');
+        const ding = new Audio('https://www.soundjay.com/button/sounds/button-3.mp3');
+        mascot.onclick = () => {
+            ding.play();
+            alert("Mascot: 'In Python, we start counting at 0, not 1! The first item is always at position 0.'");
+        };
+    </script>
+
+</body>
+</html>

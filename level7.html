@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Adventure - Level 7</title>
+    <style>
+        :root {
+            --main-color: #2c3e50;    /* Midnight Blue */
+            --accent-color: #f1c40f;  /* Victory Gold */
+            --glow-purple: #8e44ad;   /* Magic Purple */
+            --bg-color: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: var(--main-color);
+            height: 250px; width: 100%; color: white; text-align: center; padding-top: 40px; position: relative;
+            background: linear-gradient(135deg, #2c3e50 0%, #8e44ad 100%);
+        }
+
+        header::after {
+            content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 100px;
+            background: var(--bg-color); border-radius: 100% 100% 0 0;
+        }
+
+        nav { margin-top: 20px; display: flex; justify-content: center; gap: 10px; z-index: 10; position: relative; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: white; background: rgba(255, 255, 255, 0.1); padding: 8px 15px; border-radius: 50px; font-size: 0.9rem; border: 1px solid white; }
+        nav a.active { background: var(--accent-color); color: #2d3436; border: none; }
+
+        .mascot-container { text-align: center; margin-top: -60px; position: relative; z-index: 5; }
+        .mascot { 
+            width: 130px; height: 130px; background: white; border-radius: 50%; 
+            border: 6px solid var(--accent-color); cursor: pointer;
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        .card {
+            background: white; width: 90%; max-width: 850px; margin: 30px auto; padding: 40px;
+            border-radius: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 10px solid #FFFFFF; outline: 4px solid var(--glow-purple);
+        }
+
+        .editor-box { border-radius: 30px; overflow: hidden; border: 4px solid #EEE; margin: 30px 0; }
+
+        .next-btn {
+            display: inline-block; background: var(--accent-color); color: #2d3436; padding: 20px 50px;
+            text-decoration: none; font-size: 1.5rem; border-radius: 60px; font-weight: bold;
+            box-shadow: 0 10px 0 #d4ac0d; transition: 0.2s;
+        }
+
+        .next-btn:hover { transform: scale(1.05); box-shadow: 0 5px 0 #d4ac0d; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">L1</a><a href="level2.html">L2</a><a href="level3.html">L3</a>
+            <a href="level4.html">L4</a><a href="level5.html">L5</a><a href="level6.html">L6</a>
+            <a href="level7.html" class="active">L7</a><a href="level8.html">L8</a>
+        </nav>
+        <h1>🎓 Level 7: The Master Recipe</h1>
+        <p>Bundle your code into "Functions" to become a professional!</p>
+    </header>
+
+    <div class="mascot-container">
+        <div style="background: white; padding: 10px; border-radius: 15px; border: 2px solid var(--glow-purple); display: inline-block; margin-bottom: 10px;">
+            "You've learned the basics! Let's move to Stage 2..." ✨
+        </div><br>
+        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Master&backgroundColor=f1c40f" class="mascot" id="mascot">
+    </div>
+
+    <div class="card">
+        <h2>What is a Function? 📦</h2>
+        <p>A function is a <b>reusable block of code</b>. It's like a recipe you write once and use whenever you're hungry for that specific action!</p>
+
+        
+
+        <div class="editor-box">
+            <iframe src="https://trinket.io/embed/python3/ec8d9f05b38d?runMode=console" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="level8.html" class="next-btn">Next: Level 8 ➔</a>
+        </div>
+    </div>
+
+</body>
+</html>

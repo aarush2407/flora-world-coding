@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Adventure - Level 5</title>
+    <style>
+        /* THE CURVY DESIGN SYSTEM */
+        :root {
+            --main-color: #8E44AD;    /* Deep Loop Purple */
+            --loop-blue: #3498DB;     /* Action Blue */
+            --sunny-yellow: #F1C40F; 
+            --bg-color: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* WAVY HEADER */
+        header {
+            background-color: var(--main-color);
+            height: 250px;
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding-top: 40px;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--bg-color);
+            border-radius: 100% 100% 0 0;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 10;
+            position: relative;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        nav a.active { background: var(--sunny-yellow); color: #2d3436; }
+
+        /* MASCOT */
+        .mascot-container {
+            text-align: center;
+            margin-top: -60px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .mascot {
+            width: 130px;
+            height: 130px;
+            background: white;
+            border-radius: 50%;
+            border: 6px solid var(--loop-blue);
+            cursor: pointer;
+            transition: 0.3s;
+            /* Spinning animation for the loop level! */
+            animation: spin 10s infinite linear;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* CONTENT CARD */
+        .card {
+            background: white;
+            width: 90%;
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 50px;
+            box-shadow: 0 20px 40px rgba(142, 68, 173, 0.1);
+            border: 10px solid #FFFFFF;
+            outline: 4px solid var(--main-color);
+        }
+
+        .editor-box {
+            border-radius: 30px;
+            overflow: hidden;
+            border: 4px solid #EEE;
+            margin: 30px 0;
+        }
+
+        /* NEXT BUTTON */
+        .next-btn {
+            display: inline-block;
+            background: var(--loop-blue);
+            color: white;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            border-radius: 60px;
+            font-weight: bold;
+            box-shadow: 0 10px 0 #2980B9;
+            transition: 0.2s;
+        }
+
+        .next-btn:hover { transform: translateY(4px); box-shadow: 0 6px 0 #2980B9; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Level 1</a>
+            <a href="level2.html">Level 2</a>
+            <a href="level3.html">Level 3</a>
+            <a href="level4.html">Level 4</a>
+            <a href="level5.html" class="active">Level 5</a>
+        </nav>
+        <h1>🔄 Level 5: The Loop-de-Loop</h1>
+        <p>Don't repeat yourself—make the computer do the hard work!</p>
+    </header>
+
+    <div class="mascot-container">
+        <div style="background: white; padding: 10px; border-radius: 15px; border: 2px solid var(--main-color); display: inline-block; margin-bottom: 10px;">
+            "I can run 100 times in 1 second! Spin me!" 🌀
+        </div><br>
+        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Looping&backgroundColor=3498DB" class="mascot" id="mascot">
+    </div>
+
+    <div class="card">
+        <h2>What is a Loop? 🔁</h2>
+        <p>A <b>For Loop</b> tells Python: "Do this action for every item in a list" or "Do this action 10 times."</p>
+
+        
+
+        <div class="editor-box">
+            <iframe src="https://trinket.io/embed/python3/c93435c3d5ca?runMode=console" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+
+        <p><b>Challenge:</b> In the code, change the number inside <code>range(5)</code> to <b>100</b> and watch the computer go crazy!</p>
+        
+        <div style="text-align: center;">
+            <a href="level6.html" class="next-btn">Next: Level 6 ➔</a>
+        </div>
+    </div>
+
+    <script>
+        const mascot = document.getElementById('mascot');
+        const whirl = new Audio('https://www.soundjay.com/misc/sounds/magic-chime-01.mp3');
+        mascot.onclick = () => {
+            whirl.play();
+            alert("Mascot: 'If I had a loop, I could eat 1,000 pizzas in a minute!'");
+        };
+    </script>
+
+</body>
+</html>

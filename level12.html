@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Adventure - Level 12</title>
+    <style>
+        :root {
+            --main-color: #27ae60;    /* Forest Green */
+            --accent-color: #f39c12;  /* Archive Gold */
+            --paper-color: #fdf5e6;
+            --bg-color: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: var(--main-color);
+            height: 250px; width: 100%; color: white; text-align: center; padding-top: 40px; position: relative;
+            background: linear-gradient(135deg, #27ae60 0%, #2c3e50 100%);
+        }
+
+        header::after {
+            content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 100px;
+            background: var(--bg-color); border-radius: 100% 100% 0 0;
+        }
+
+        nav { margin-top: 20px; display: flex; justify-content: center; gap: 10px; z-index: 10; position: relative; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: white; background: rgba(255, 255, 255, 0.1); padding: 8px 15px; border-radius: 50px; font-size: 0.8rem; border: 1px solid white; }
+        nav a.active { background: var(--accent-color); color: white; border: none; }
+
+        .mascot-container { text-align: center; margin-top: -60px; position: relative; z-index: 5; }
+        .mascot { width: 130px; height: 130px; background: white; border-radius: 50%; border: 6px solid var(--main-color); cursor: pointer; }
+
+        .card {
+            background: white; width: 90%; max-width: 850px; margin: 30px auto; padding: 40px;
+            border-radius: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 10px solid #FFFFFF; outline: 4px solid var(--main-color);
+        }
+
+        .editor-box { border-radius: 30px; overflow: hidden; border: 4px solid #EEE; margin: 30px 0; }
+
+        .next-btn {
+            display: inline-block; background: var(--main-color); color: white; padding: 18px 45px;
+            text-decoration: none; font-size: 1.3rem; border-radius: 60px; font-weight: bold;
+            box-shadow: 0 8px 0 #1e8449; transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">L1</a><a href="level2.html">L2</a><a href="level3.html">L3</a>
+            <a href="level4.html">L4</a><a href="level5.html">L5</a><a href="level6.html">L6</a>
+            <a href="level7.html">L7</a><a href="level8.html">L8</a><a href="level9.html">L9</a>
+            <a href="level10.html">L10</a><a href="level11.html">L11</a><a href="level12.html" class="active">L12</a>
+        </nav>
+        <h1>📁 Level 12: The Eternal Memory</h1>
+        <p>Learn how to save and read data using real text files!</p>
+    </header>
+
+    <div class="mascot-container">
+        <div style="background: white; padding: 10px; border-radius: 15px; border: 2px solid var(--main-color); display: inline-block; margin-bottom: 10px;">
+            "We are writing history today! Let's save some files." 📜
+        </div><br>
+        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Archivist&backgroundColor=27ae60" class="mascot" id="mascot">
+    </div>
+
+    <div class="card">
+        <h2>Reading and Writing ✍️</h2>
+        <p>In Python, we use <code>open()</code> to create or read a file. We use <b>'w'</b> to write and <b>'r'</b> to read.</p>
+
+        
+
+        <div class="editor-box">
+            <iframe src="https://trinket.io/embed/python3/86efd76c8687?runMode=console" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="level13.html" class="next-btn">Enter Stage 3: Professional OOP ➔</a>
+        </div>
+    </div>
+
+</body>
+</html>
