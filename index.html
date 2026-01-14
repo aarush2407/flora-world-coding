@@ -3,183 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Adventure - Level 1</title>
+    <title>Flora World Coding - Level 1</title>
     <style>
-        /* THE CURVY DESIGN SYSTEM */
         :root {
-            --main-color: #6C5CE7;    /* Fun Purple */
-            --soft-pink: #FF7675;     /* Warm Pink */
-            --sunny-yellow: #FDCB6E;  /* Bright Yellow */
-            --bg-color: #F9F9FF;
-            --text-dark: #2D3436;
+            --main-color: #2ecc71;   /* Flora Green */
+            --accent-color: #f1c40f; /* Sun Gold */
+            --bg-color: #f9fbf9;
+            --header-dark: #1b5e20;
         }
 
         body {
-            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             background-color: var(--bg-color);
             margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* WAVY HEADER SECTION */
-        header {
-            background-color: var(--main-color);
-            height: 250px;
-            color: white;
-            text-align: center;
-            padding-top: 40px;
-            position: relative;
-        }
-
-        /* This creates the actual curve at the bottom of the header */
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: var(--bg-color);
-            border-radius: 100% 100% 0 0; /* Makes it look like a hill */
-        }
-
-        /* NAVIGATION BAR */
-        nav {
-            margin-top: 20px;
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            z-index: 10;
-            position: relative;
+            flex-direction: column;
+            align-items: center;
         }
 
-        nav a {
-            text-decoration: none;
+        header {
+            background: linear-gradient(135deg, var(--header-dark) 0%, var(--main-color) 100%);
+            height: 200px;
+            width: 100%;
             color: white;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-            border: 2px solid white;
-        }
-
-        nav a.active {
-            background: var(--sunny-yellow);
-            color: var(--text-dark);
-        }
-
-        /* MASCOT STYLING */
-        .mascot-container {
-            text-align: center;
-            margin-top: -60px; /* Pulls it up into the curve */
             position: relative;
-            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .mascot {
-            width: 130px;
-            height: 130px;
-            background: white;
-            border-radius: 50%;
-            border: 6px solid var(--sunny-yellow);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            animation: bounce 3s infinite ease-in-out;
+        /* Branding in the top left */
+        .brand-name {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(5deg); }
+        nav { 
+            margin-top: 10px; 
+            display: flex; 
+            justify-content: center; 
+            gap: 8px; 
+            z-index: 10;
+            flex-wrap: wrap;
+            max-width: 90%;
         }
+        
+        nav a { 
+            text-decoration: none; 
+            color: white; 
+            background: rgba(255, 255, 255, 0.15); 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 0.8rem; 
+            border: 1px solid rgba(255,255,255,0.3); 
+        }
+        
+        nav a.active { background: var(--accent-color); color: #333; border: none; font-weight: bold; }
 
-        /* MAIN CONTENT CARD */
         .card {
             background: white;
-            width: 90%;
-            max-width: 850px;
-            margin: 30px auto;
+            width: 85%;
+            max-width: 800px;
+            margin: -30px auto 50px auto;
             padding: 40px;
-            border-radius: 50px; /* VERY CURVY */
-            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.1);
-            border: 10px solid #FFFFFF;
-            outline: 4px solid var(--main-color);
+            border-radius: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 20;
+            border: 8px solid white;
+            outline: 3px solid var(--main-color);
         }
 
-        /* TRINKET EDITOR BOX */
-        .editor-box {
-            border-radius: 30px;
-            overflow: hidden; /* Clips the corners of the trinket */
-            border: 4px solid #F1F2F6;
-            margin: 30px 0;
-        }
+        h1 { margin: 10px 0; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
 
-        /* NEXT LEVEL BUTTON */
         .next-btn {
             display: inline-block;
-            background: var(--soft-pink);
+            background-color: var(--main-color);
             color: white;
             padding: 20px 50px;
             text-decoration: none;
             font-size: 1.5rem;
-            border-radius: 60px;
             font-weight: bold;
-            box-shadow: 0 10px 0 #E17055;
+            border-radius: 60px;
+            box-shadow: 0 10px 0 #1e8449;
             transition: 0.2s;
             margin-top: 20px;
         }
 
-        .next-btn:hover {
-            transform: translateY(4px);
-            box-shadow: 0 6px 0 #E17055;
-        }
+        .next-btn:hover { transform: translateY(3px); box-shadow: 0 7px 0 #1e8449; }
 
-        .speech-bubble {
-            background: #fff;
-            border-radius: 20px;
-            padding: 15px;
-            display: inline-block;
-            margin-bottom: 10px;
-            border: 3px solid var(--main-color);
-            position: relative;
-        }
+        code { background: #f0f0f0; padding: 4px 8px; border-radius: 5px; color: #d35400; }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="brand-name">🌿 Flora World Coding</div>
+        <h1>Level 1: The Seed</h1>
+        <p>Start your coding journey in the Flora Kingdom!</p>
+        
         <nav>
-            <a href="index.html" class="active">Level 1</a>
-            <a href="level2.html">Level 2</a>
-            <a href="#">Quizzes</a>
+            <a href="index.html" class="active">L1</a>
+            <a href="level2.html">L2</a>
+            <a href="level3.html">L3</a>
+            <a href="level4.html">L4</a>
+            <a href="level5.html">L5</a>
+            <a href="level6.html">L6</a>
+            <a href="level7.html">L7</a>
+            <a href="level8.html">L8</a>
+            <a href="level9.html">L9</a>
+            <a href="level10.html">L10</a>
+            <a href="level11.html">L11</a>
+            <a href="level12.html">L12</a>
         </nav>
-        <h1>🐍 Python Wonderland</h1>
-        <p>Your journey to becoming a coding wizard begins here!</p>
     </header>
 
-    <div class="mascot-container">
-        <div class="speech-bubble" id="bubble">Click me for a hint! 🐾</div><br>
-        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Buddy&backgroundColor=ffadad" 
-             class="mascot" id="mascot" alt="Buddy the Robot">
+    <div class="card">
+        <h2>Welcome to the Garden 🌸</h2>
+        <p>In Python, the first thing we do is make our computer speak. We use the <code>print()</code> command to do this!</p>
+        
+        <div style="background: #2c3e50; color: #ecf0f1; padding: 20px; border-radius: 15px; font-family: monospace; margin: 20px 0;">
+            <span style="color: #7f8c8d;"># This is your first line of code:</span><br>
+            print(<span style="color: #e67e22;">"Hello, Flora World!"</span>)
+        </div>
+
+        <p>Type the code above into your Trinket editor to see the magic happen.</p>
+
+        <div style="border-radius: 20px; overflow: hidden; border: 3px solid #eee;">
+            <iframe src="https://trinket.io/embed/python/3/YOUR_LEVEL1_TRINKET_ID" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="level2.html" class="next-btn">Grow to Level 2 ➔</a>
+        </div>
     </div>
 
-    <div class="card">
-        <h2>Level 1: The Magic "Print" 🪄</h2>
-        <p>In Python, the <b>print()</b> command is like a magic spell that makes text appear on the screen.</p>
-        
-        <div class="editor-box">
-    <iframe src="https://trinket.io/embed/python3/4bc4e554731a?runMode=console" 
-            width="100%" 
-            height="400" 
-            frameborder="0" 
-            marginwidth="0" 
-            marginheight="0" 
-            allowfullscreen>
-    </iframe>
-</div>
+</body>
+</html>
 
         <p><b>Challenge:</b> Change the word inside the quotes to your own name and click the <b>Play (▶)</b> button!</p>
         
