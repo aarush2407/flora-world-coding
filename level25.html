@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flora World - Graduation</title>
+    <style>
+        :root {
+            --gold: #f1c40f;
+            --dark-gold: #b7950b;
+        }
+        body { font-family: 'Georgia', serif; background: #f4f4f4; text-align: center; margin: 0; padding: 0; }
+        
+        /* This area stays on the screen but won't look like the cert */
+        .no-print { margin: 20px; }
+
+        /* THE CERTIFICATE BOX */
+        #certificate {
+            width: 800px;
+            height: 550px;
+            padding: 50px;
+            margin: 40px auto;
+            background: white;
+            border: 15px double var(--gold);
+            position: relative;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            background-image: radial-gradient(circle, #fffdf5 0%, #ffffff 100%);
+        }
+
+        .cert-header { color: var(--dark-gold); font-size: 45px; margin-bottom: 10px; }
+        .cert-sub { font-size: 20px; font-style: italic; color: #555; }
+        .student-name { border-bottom: 2px solid #555; display: inline-block; width: 80%; margin: 30px 0; font-size: 35px; color: #333; height: 50px; }
+        .details { font-size: 18px; line-height: 1.6; color: #444; margin-top: 20px; }
+        
+        .footer-info {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .badge { font-size: 80px; position: absolute; bottom: 40px; right: 40px; opacity: 0.8; }
+
+        /* BUTTON STYLING */
+        .download-btn {
+            background: #27ae60;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .download-btn:hover { background: #2ecc71; }
+
+        /* PRINT SETTINGS - This hides everything but the certificate when printing */
+        @media print {
+            body { background: white; }
+            .no-print, header, footer, iframe { display: none !important; }
+            #certificate { margin: 0; border: 10px double var(--gold); box-shadow: none; width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="no-print" style="background: var(--gold); padding: 20px; color: white;">
+        <h1>🏆 LEVEL 25 COMPLETE!</h1>
+        <p>You have graduated from the Flora World Academy.</p>
+    </header>
+
+    <div class="no-print">
+        <p>Type your name below, then click download!</p>
+        <button class="download-btn" onclick="window.print()">💾 Download / Print Certificate</button>
+    </div>
+
+    <div id="certificate">
+        <div class="cert-header">Flora World Coding</div>
+        <div class="cert-sub">Certificate of Python Mastery</div>
+        
+        <p class="details">This is to certify that</p>
+        <div class="student-name" contenteditable="true">Click to type your name</div>
+        
+        <p class="details">
+            Has successfully completed 25 levels of Python programming,<br>
+            mastering Variables, Loops, Classes, and Game Development.
+        </p>
+
+        <div class="badge">🌿</div>
+
+        <div class="footer-info">
+            <div>Verified at: <b>www.flora-world.com</b></div>
+            <div>Date: <span id="currentDate"></span></div>
+        </div>
+    </div>
+    <div class="no-print">
+        <iframe src="https://trinket.io/embed/python/f9b445dc48f5" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <br>
+        <a href="index.html" style="color: var(--dark-gold); text-decoration: none; font-weight: bold;">🏠 Return to Home</a>
+    </div>
+
+    <script>
+        // Set today's date automatically
+        document.getElementById('currentDate').innerText = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
