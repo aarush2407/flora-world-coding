@@ -1,1 +1,164 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Contact Us | Flora World Coding</title> <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet"> <style> body { font-family: 'Lexend', sans-serif; background: #f0fdf4; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; } .contact-card { background: white; padding: 50px; border-radius: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); text-align: center; border: 4px solid #2ecc71; max-width: 400px; } h1 { font-family: 'Fredoka One', cursive; color: #2ecc71; font-size: 2.5rem; margin-bottom: 10px; } p { color: #555; margin-bottom: 30px; } .insta-link { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; transition: transform 0.3s; } .insta-link:hover { transform: scale(1.1); } .home-btn { display: block; margin-top: 30px; color: #888; text-decoration: none; font-size: 0.9rem; } </style> </head> <body> <div class="contact-card"> <h1>Get in Touch! 📬</h1> <p>Have a question about a Python level or a bug in your code? We're here to help!</p> <a href="https://instagram.com/floraworldcoding" class="insta-link" target="_blank">Message @floraworldcoding</a> <a href="index.html" class="home-btn">← Back to Lessons</a> </div> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US | FLORA WORLD CODING</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* 1. MAIN PAGE STYLES */
+        body { font-family: 'Lexend', sans-serif; background: #f0fdf4; margin: 0; text-align: center; color: #1a2e05; line-height: 1.6; }
+        
+        /* 2. THE NAV BAR STYLES */
+        .flora-nav-container {
+            background: #0f172a; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lexend', sans-serif;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 30px; 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: #c5a059;
+            text-decoration: none;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links-group { display: flex; gap: 10px; }
+
+        .flora-link {
+            color: #3b82f6; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .flora-link:hover {
+            background: #c5a059;
+            color: #0f172a !important;
+        }
+
+        /* 3. CONTACT CARD STYLES */
+        .container { max-width: 800px; margin: 60px auto; padding: 20px; }
+        
+        .contact-card { 
+            background: white; 
+            padding: 60px 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1); 
+            border: 4px solid #2ecc71;
+        }
+
+        h1 { font-family: 'Fredoka One', cursive; color: #27ae60; font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
+        p { color: #475569; font-size: 1.2rem; margin-bottom: 40px; }
+
+        .contact-methods { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+
+        .email-box {
+            background: #f0fdf4;
+            border: 2px dashed #2ecc71;
+            padding: 20px 40px;
+            border-radius: 20px;
+            font-size: 1.3rem;
+            color: #166534;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .email-box:hover { background: #dcfce7; transform: scale(1.02); }
+
+        .insta-link { 
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+            color: white; 
+            padding: 20px 40px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            display: inline-flex; 
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .insta-link:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3); }
+
+        .home-btn { 
+            display: inline-block; 
+            margin-top: 40px; 
+            color: #64748b; 
+            text-decoration: none; 
+            font-size: 1rem; 
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .home-btn:hover { color: #0f172a; }
+
+        /* 4. FOOTER STYLES */
+        .flora-footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 60px 20px;
+            border-radius: 60px 60px 0 0; 
+            margin-top: 80px;
+            border-top: 3px solid #c5a059;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="flora-nav-container">
+    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <div class="nav-links-group">
+        <a href="index.html" class="flora-link">HOME</a>
+        <a href="level1.html" class="flora-link">LEVELS</a>
+        <a href="privacy.html" class="flora-link">PRIVACY</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="contact-card">
+        <h1>GET IN TOUCH! 📬</h1>
+        <p>HAVE A QUESTION ABOUT A PYTHON LEVEL OR A BUG IN YOUR CODE? OUR EXPERTS ARE READY TO HELP YOU BLOOM!</p>
+        
+        <div class="contact-methods">
+            <a href="mailto:floraworldcoding@gmail.com" class="email-box">
+                <i class="fas fa-envelope"></i> floraworldcoding@gmail.com
+            </a>
+
+            <a href="https://instagram.com/floraworldcoding" class="insta-link" target="_blank">
+                <i class="fab fa-instagram"></i> MESSAGE @FLORA_WORLD_CODING
+            </a>
+        </div>
+
+        <a href="index.html" class="home-btn">← RETURN TO ACADEMY HOME</a>
+    </div>
+</div>
+
+<footer class="flora-footer">
+    <h2 style="color: #c5a059; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">FLORA WORLD ACADEMY</h2>
+    <p style="font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | SUPPORT TEAM</p>
+</footer>
+
+</body>
+</html>
