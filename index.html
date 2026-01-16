@@ -1,1 +1,241 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Flora World Coding | Master Python</title> <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <style> :root { --primary: #2ecc71; --secondary: #3498db; --dark: #1a1a1a; } body { font-family: 'Lexend', sans-serif; background: #f0fdf4; margin: 0; text-align: center; color: var(--dark); } header { background: linear-gradient(135deg, #2ecc71, #27ae60, #3498db); color: white; padding: 100px 20px; border-bottom-left-radius: 50% 15%; border-bottom-right-radius: 50% 15%; } .logo-container img { width: 120px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2)); animation: float 3s ease-in-out infinite; } @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } } h1 { font-family: 'Fredoka One', cursive; font-size: 4rem; margin: 10px 0; } .start-btn { display: inline-block; background: white; color: var(--primary); padding: 25px 60px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.8rem; margin-top: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s; } .start-btn:hover { transform: scale(1.1); background: var(--dark); color: white; } .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 80px auto; padding: 0 20px; } .f-card { background: white; padding: 30px; border-radius: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); } footer { background: var(--dark); color: white; padding: 60px 20px; margin-top: 100px; border-top-left-radius: 50% 10%; border-top-right-radius: 50% 10%; } .footer-nav a { color: white; margin: 0 10px; text-decoration: none; font-size: 0.9rem; opacity: 0.8; } </style> </head> <body> <header> <div class="logo-container"> <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo"> </div> <h1>Flora World Coding</h1> <p>Master Python through 25 Levels of Adventure.</p> <a href="level1.html" class="start-btn">START LEVEL 1 🚀</a> </header> <div class="features"> <div class="f-card"><h3>🌱 Beginner Friendly</h3><p>Start from zero. No experience needed.</p></div> <div class="f-card"><h3>🎮 Gamified Learning</h3><p>Every lesson is a new level to unlock.</p></div> <div class="f-card"><h3>🏆 Certification</h3><p>Earn your Python Mastery certificate.</p></div> </div> <footer> <h3>Join the Community</h3> <a href="https://instagram.com/floraworldcoding" style="color:white; font-size:2rem;"><i class="fab fa-instagram"></i></a> <p>@floraworldcoding</p> <div class="footer-nav"> <a href="about.html">About Us</a> | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact</a> </div> </footer> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLORA WORLD CODING | MASTER PYTHON ADVENTURE</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* 1. MAIN PAGE STYLES */
+        body { font-family: 'Lexend', sans-serif; background: #f0fdf4; margin: 0; text-align: center; color: #1a2e05; line-height: 1.6; overflow-x: hidden; }
+        
+        /* 2. THE NAV BAR STYLES */
+        .flora-nav-container {
+            background: #0f172a; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lexend', sans-serif;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 30px; 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 15px;
+            z-index: 1000;
+        }
+
+        .logo-text {
+            color: #c5a059;
+            text-decoration: none;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links-group { display: flex; gap: 10px; }
+
+        .flora-link {
+            color: #3b82f6; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .flora-link:hover {
+            background: #c5a059;
+            color: #0f172a !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* 3. HERO SECTION */
+        header { 
+            background: linear-gradient(135deg, #2ecc71, #27ae60, #3498db); 
+            color: white; 
+            padding: 120px 20px; 
+            border-bottom-left-radius: 50% 15%; 
+            border-bottom-right-radius: 50% 15%; 
+            margin-top: -80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container img { 
+            width: 120px; 
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2)); 
+            animation: float 3s ease-in-out infinite; 
+            margin-top: 50px;
+        }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        h1 { font-family: 'Fredoka One', cursive; font-size: 4rem; margin: 10px 0; text-transform: uppercase; text-shadow: 4px 4px 0px rgba(0,0,0,0.1); }
+        
+        .start-btn { 
+            display: inline-block; 
+            background: white; 
+            color: #27ae60; 
+            padding: 25px 60px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            font-size: 1.8rem; 
+            margin-top: 30px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .start-btn:hover { transform: scale(1.05); background: #0f172a; color: white; }
+
+        /* 4. FEATURES SECTION */
+        .features { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+            max-width: 1100px; 
+            margin: 80px auto; 
+            padding: 0 20px; 
+        }
+
+        .f-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 35px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+        .f-card:hover { border-color: #2ecc71; transform: translateY(-10px); }
+        .f-card h3 { color: #27ae60; font-family: 'Fredoka One', cursive; text-transform: uppercase; font-size: 1.5rem; }
+
+        /* 5. REVIEWS SECTION */
+        .reviews-section { background: #0f172a; padding: 80px 20px; color: white; margin-top: 60px; }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+        .review-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 25px;
+            text-align: left;
+            border-left: 5px solid #c5a059;
+        }
+        .stars { color: #fbbf24; margin-bottom: 10px; }
+        .review-text { font-style: italic; opacity: 0.9; font-size: 1rem; }
+        .user-name { display: block; margin-top: 15px; font-weight: bold; color: #c5a059; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* 6. FOOTER STYLES */
+        .flora-footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 80px 20px;
+            border-radius: 60px 60px 0 0; 
+            margin-top: 0px;
+            border-top: 3px solid #c5a059;
+            text-align: center;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .footer-link:hover { color: #c5a059; }
+        .social-icon { color: white; font-size: 2rem; transition: 0.3s; }
+        .social-icon:hover { color: #c5a059; transform: scale(1.2); }
+    </style>
+</head>
+<body>
+
+<nav class="flora-nav-container">
+    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <div class="nav-links-group">
+        <a href="index.html" class="flora-link">HOME</a>
+        <a href="level1.html" class="flora-link">START LEVELS</a>
+        <a href="privacy.html" class="flora-link">PRIVACY</a>
+    </div>
+</nav>
+
+<header>
+    <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
+    </div>
+    <h1>FLORA WORLD CODING</h1>
+    <p style="font-size: 1.4rem; opacity: 0.9;">MASTER PYTHON THROUGH 25 LEVELS OF ARCHITECTURAL ADVENTURE.</p>
+    <a href="level1.html" class="start-btn">START LEVEL 1 🚀</a>
+</header>
+
+<div class="features">
+    <div class="f-card">
+        <h3>🌱 BEGINNER FRIENDLY</h3>
+        <p>START FROM ABSOLUTE ZERO. WE BREAK DOWN COMPLEX CODE INTO SIMPLE, NATURE-INSPIRED ANALOGIES.</p>
+    </div>
+    <div class="f-card">
+        <h3>🎮 GAMIFIED PATHWAY</h3>
+        <p>EVERY LESSON IS A NEW LEVEL TO UNLOCK. EARN YOUR WAY FROM A SEEDLING TO A PYTHON ARCHITECT.</p>
+    </div>
+    <div class="f-card">
+        <h3>🏆 CERTIFICATION</h3>
+        <p>REACH LEVEL 25 AND EARN YOUR PYTHON MASTERY CREDENTIALS TO BOOST YOUR PORTFOLIO.</p>
+    </div>
+</div>
+
+
+
+<section class="reviews-section">
+    <h2 style="font-family: 'Fredoka One'; font-size: 2.5rem; text-transform: uppercase; color: #c5a059;">WHAT OUR LEARNERS SAY</h2>
+    <div class="review-grid">
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"FLORA WORLD CODING TRANSFORMED HOW I VIEW CODING. THE LEVELS ARE ADDICTIVE AND THE EXPLANATIONS ARE CRYSTAL CLEAR!"</p>
+            <span class="user-name">- SARAH K., JUNIOR DEVELOPER</span>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"I TRIED MANY COURSES, BUT THE GAMIFIED SYSTEM HERE KEPT ME MOTIVATED UNTIL THE GRADUATION LEVEL. HIGHLY RECOMMEND!"</p>
+            <span class="user-name">- JAMES L., STUDENT</span>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"THE TRANSITION FROM BASIC LOOPS TO OBJECT-ORIENTED PROGRAMMING WAS SO SMOOTH. THE GARDEN ANALOGIES REALLY WORK!"</p>
+            <span class="user-name">- MARIA R., TECH TRANSITIONER</span>
+        </div>
+    </div>
+</section>
+
+<footer class="flora-footer">
+    <h2 style="color: #c5a059; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">JOIN THE COMMUNITY</h2>
+    
+    <a href="https://instagram.com/floraworldcoding" class="social-icon">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <p style="margin: 10px 0 30px;">@FLORA_WORLD_CODING</p>
+
+    <div class="footer-nav">
+        <a href="about.html" class="footer-link">ABOUT US</a> | 
+        <a href="privacy.html" class="footer-link">PRIVACY POLICY</a> | 
+        <a href="contact.html" class="footer-link">CONTACT</a>
+    </div>
+    
+    <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | THE GLOBAL STANDARD IN PYTHON EDUCATION</p>
+</footer>
+
+</body>
+</html>
