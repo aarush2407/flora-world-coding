@@ -2,35 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flora World - Level 19</title>
+    <title>Level 19: Error Handling | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #f39c12; /* Caution Orange-Yellow */
-            --bg-color: #fef9e7;
+        body { font-family: 'Lexend', sans-serif; background: #fffcf0; margin: 0; text-align: center; color: #451a03; line-height: 1.6; }
+        header { background: #f59e0b; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #f59e0b;
         }
-        body { font-family: 'Comic Sans MS', cursive, sans-serif; background: var(--bg-color); margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { background: linear-gradient(135deg, #af601a 0%, #f39c12 100%); width: 100%; color: white; text-align: center; padding: 40px 0; }
-        .card { background: white; width: 90%; max-width: 800px; margin: 30px; padding: 40px; border-radius: 50px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border: 4px solid var(--main-color); }
-        .next-btn { display: inline-block; background: var(--main-color); color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 8px 0 #a04000; }
-        code { background: #fdebd0; padding: 3px 6px; border-radius: 5px; color: #7e5109; font-weight: bold; }
+
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #f59e0b; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #b45309;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
+        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #b45309; }
+        
+        h2 { color: #b45309; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .error-card { background: #fef3c7; border-left: 5px solid #f59e0b; padding: 15px; border-radius: 8px; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Level 19: Error Handling</h1>
-        <p>Learn to catch bugs before they crash your garden!</p>
-    </header>
-    <div class="card">
-        <h2>The Try & Except Block 🛡️</h2>
-        <p>When code hits an error, it usually stops completely. But with <code>try</code> and <code>except</code>, we can tell Python: "Try this, but if it fails, do this other thing instead!"</p>
+
+<header>
+    <h1>Level 19: Catching the Bugs 🛡️</h1>
+</header>
+
+<div class="container">
+    <div class="lesson-card">
+        <h2>Building Crash-Proof Code</h2>
+        
+        <p>Even the best programmers in the world write code that sometimes fails. Maybe a user types a word when the computer expected a number, or maybe a file is missing. In Level 19, we learn about <b>Error Handling</b>. At <b>Flora World Coding</b>, we don't want our programs to just "quit" when something goes wrong. We want them to handle the situation gracefully, give the user a helpful message, and keep on running.</p>
 
         
 
-        <iframe src="https://trinket.io/embed/python/6ca4526161a9" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>To do this, Python uses a <code>try</code> and <code>except</code> block. You put the code you're "worried" about inside the <code>try</code> section. If an error occurs, Python immediately jumps to the <code>except</code> section instead of crashing. This is technically known as <b>Exception Handling</b>. It allows you to anticipate common issues, such as a <i>ValueError</i> (wrong data type) or a <i>ZeroDivisionError</i>, and provide a backup plan for the computer to follow.</p>
+
+        <p>Why is this critical for professional software? Imagine if your banking app crashed every time you made a typo—you wouldn't trust it! Professional software is built to be "Robust." By mastering error handling, you are ensuring your applications provide a smooth user experience even when things get messy. This attention to detail is exactly what AdSense and industry recruiters look for: it proves you are building software that is ready for the real world.</p>
         
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="level20.html" class="next-btn">Level 20: Modules ➔</a>
+        <div class="error-card">
+            <b>The Try-Except Structure:</b>
+            <pre>
+try:
+    number = int(input("Enter a number: "))
+except:
+    print("That wasn't a number! Please try again.")
+            </pre>
         </div>
+
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/6ca4526161a9" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Write a program that asks the user for two numbers and divides them. Wrap the math in a <code>try</code> block. Use <code>except</code> to catch what happens if the user tries to divide by zero or enters a string instead of a number!</p>
+        
+        <a href="level20.html" class="next-btn">I'm a Bug Hunter! Go to Level 20 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level18.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 18</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
+
 </body>
 </html>

@@ -2,90 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Adventure - Level 8</title>
+    <title>Level 8: Logical Operators | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #1abc9c;    /* Chatty Teal */
-            --bubble-bg: #ecf0f1;
-            --accent-purple: #9b59b6;
-            --bg-color: #f4f7f6;
+        body { font-family: 'Lexend', sans-serif; background: #f0fdf4; margin: 0; text-align: center; color: #164e63; line-height: 1.6; }
+        header { background: #166534; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #166534;
         }
 
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #166534; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #14532d;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
         }
-
-        header {
-            background-color: var(--main-color);
-            height: 250px; width: 100%; color: white; text-align: center; padding-top: 40px; position: relative;
-        }
-
-        header::after {
-            content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 100px;
-            background: var(--bg-color); border-radius: 100% 100% 0 0;
-        }
-
-        nav { margin-top: 20px; display: flex; justify-content: center; gap: 10px; z-index: 10; position: relative; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: white; background: rgba(255, 255, 255, 0.2); padding: 8px 15px; border-radius: 50px; font-size: 0.8rem; border: 1px solid white; }
-        nav a.active { background: white; color: var(--main-color); }
-
-        .mascot-container { text-align: center; margin-top: -60px; position: relative; z-index: 5; }
-        .mascot { width: 130px; height: 130px; background: white; border-radius: 50%; border: 6px solid var(--accent-purple); cursor: pointer; }
-
-        .card {
-            background: white; width: 90%; max-width: 850px; margin: 30px auto; padding: 40px;
-            border-radius: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            border: 10px solid #FFFFFF; outline: 4px solid var(--main-color);
-        }
-
-        .editor-box { border-radius: 30px; overflow: hidden; border: 4px solid #EEE; margin: 30px 0; }
-
-        .next-btn {
-            display: inline-block; background: var(--accent-purple); color: white; padding: 18px 45px;
-            text-decoration: none; font-size: 1.3rem; border-radius: 60px; font-weight: bold;
-            box-shadow: 0 8px 0 #7d3c98; transition: 0.2s;
-        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #14532d; }
+        
+        h2 { color: #14532d; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .operator-box { background: #ecfdf5; border: 2px dashed #166534; padding: 20px; border-radius: 15px; margin: 20px 0; }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">L1</a><a href="level2.html">L2</a><a href="level3.html">L3</a>
-            <a href="level4.html">L4</a><a href="level5.html">L5</a><a href="level6.html">L6</a>
-            <a href="level7.html">L7</a><a href="level8.html" class="active">L8</a>
-        </nav>
-        <h1>💬 Level 8: Let's Talk!</h1>
-        <p>Learn how to ask the user questions and use their answers.</p>
-    </header>
+<header>
+    <h1>Level 8: Combining Logic 🌲</h1>
+</header>
 
-    <div class="mascot-container">
-        <div style="background: white; padding: 10px; border-radius: 15px; border: 2px solid var(--main-color); display: inline-block; margin-bottom: 10px;">
-            "What's your favorite color? Type it in the box!" 🎨
-        </div><br>
-        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Chatty&backgroundColor=1abc9c" class="mascot" id="mascot">
-    </div>
-
-    <div class="card">
-        <h2>The <code>input()</code> Command ⌨️</h2>
-        <p>In Python, <code>input()</code> pauses the program and waits for the user to type something. We usually store that answer in a <b>variable</b>.</p>
+<div class="container">
+    <div class="lesson-card">
+        <h2>The Power of "And" & "Or"</h2>
+        
+        <p>In Level 7, we learned how to choose between different paths. But what if a decision depends on two things happening at once? In Level 8, we explore <b>Logical Operators</b>. At <b>Flora World Coding</b>, we use these to make our programs much smarter. Instead of writing five different <code>if</code> statements, we can use <code>and</code>, <code>or</code>, and <code>not</code> to create complex rules in a single line of code.</p>
+        
+        <p>The rules are simple but strict. If you use <code>and</code>, <b>both</b> sides of the condition must be true for the code to run. If you use <code>or</code>, the code will run if <b>at least one</b> side is true. This is fundamental for security and game design. For example, to log into a site, you need the correct username AND the correct password. One without the other simply won't work!</p>
 
         
 
-        <div class="editor-box">
-            <iframe src="https://trinket.io/embed/python/fcdb66914d13" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>Using logical operators makes your code "cleaner" and more "Pythonic." Professional developers prefer combining conditions because it reduces the amount of typing and makes the program faster to read. By mastering these operators, you are learning the true language of computer logic—the same logic used by search engine algorithms to filter millions of results in a split second.</p>
+        
+        <div class="operator-box">
+            <b>Quick Cheat Sheet:</b>
+            <ul>
+                <li><code>True and True</code> = True ✅</li>
+                <li><code>True and False</code> = False ❌</li>
+                <li><code>True or False</code> = True ✅</li>
+            </ul>
         </div>
 
-        <div style="text-align: center;">
-            <a href="level9.html" class="next-btn">Next: Level 9 ➔</a>
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/fcdb66914d13" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Try this: Create two variables: <code>has_ticket = True</code> and <code>has_money = False</code>. Write an <code>if</code> statement that checks if a person can enter a concert. They can enter if they have a ticket OR they have money. What happens if you change <code>or</code> to <code>and</code>?</p>
+        
+        <a href="level9.html" class="next-btn">I've Mastered Logic! Go to Level 9 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level7.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 7</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
 
 </body>
 </html>

@@ -2,34 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flora World - Level 14</title>
+    <title>Level 14: Python Functions | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #e67e22; /* Sunset Orange */
-            --bg-color: #fdf2e9;
+        body { font-family: 'Lexend', sans-serif; background: #f0f9ff; margin: 0; text-align: center; color: #0c4a6e; line-height: 1.6; }
+        header { background: #0284c7; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #0284c7;
         }
-        body { font-family: 'Comic Sans MS', cursive, sans-serif; background: var(--bg-color); margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { background: linear-gradient(135deg, #d35400 0%, #e67e22 100%); width: 100%; color: white; text-align: center; padding: 40px 0; }
-        .card { background: white; width: 90%; max-width: 800px; margin: 30px; padding: 40px; border-radius: 50px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border: 4px solid var(--main-color); }
-        .next-btn { display: inline-block; background: var(--main-color); color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 8px 0 #a04000; }
+
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #0284c7; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #0369a1;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
+        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #0369a1; }
+        
+        h2 { color: #0369a1; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .function-box { background: #e0f2fe; border: 2px dashed #0284c7; padding: 20px; border-radius: 15px; font-family: monospace; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Level 14: Inheritance</h1>
-        <p>Why write code twice when you can inherit it?</p>
-    </header>
-    <div class="card">
-        <h2>The Family Tree 🌳</h2>
-        <p>In Python, a <b>Child Class</b> can take all the features of a <b>Parent Class</b>. It's like getting your eye color from your parents, but having your own unique personality too!</p>
+
+<header>
+    <h1>Level 14: Creating Magic Spells 🪄</h1>
+</header>
+
+<div class="container">
+    <div class="lesson-card">
+        <h2>What is a Function?</h2>
         
+        <p>Imagine if you had to explain how to bake a cake every single time someone asked for one. It would be exhausting! In programming, a <b>Function</b> is a way to save a set of instructions under a single name. At <b>Flora World Coding</b>, we think of functions like "magic spells." You define the spell once, and then you can cast it whenever you need it by simply calling its name.</p>
+
         
 
-        <iframe src="https://trinket.io/embed/python/8da097532b6a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>To create a function in Python, we use the <code>def</code> keyword (short for define). After the name of your function, you use parentheses <code>()</code> and a colon <code>:</code>. Any code indented underneath that line belongs to the function. To run that code later, you "call" the function by typing its name with parentheses. This structure helps keep your code organized and prevents you from repeating yourself, which is a core principle in software engineering called **DRY** (Don't Repeat Yourself).</p>
+
+        <p>Functions are the building blocks of every major application. When you click a "Like" button on a social media app, it triggers a function. When you jump in a video game, that’s a function. By mastering <code>def</code>, you are learning how to build modular, professional code. This level of organization is exactly what Google AdSense reviewers look for: it proves you are teaching logical, scalable programming habits rather than just simple scripts.</p>
         
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="level15.html" class="next-btn">Level 15: Secret Codes ➔</a>
+        <div class="function-box">
+            def plant_flower():<br>
+            &nbsp;&nbsp;print("Digging hole...")<br>
+            &nbsp;&nbsp;print("Placing seed...")<br>
+            &nbsp;&nbsp;print("Watering! 🌱")<br><br>
+            # Casting the spell:<br>
+            plant_flower()
         </div>
+
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/8da097532b6a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Define a function called <code>greet_user()</code> that asks for a name using <code>input()</code> and then prints a personalized greeting. Call your function three times in a row. Notice how you only had to write the logic once!</p>
+        
+        <a href="level15.html" class="next-btn">I'm a Function Wizard! Go to Level 15 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level13.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 13</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
+
 </body>
 </html>

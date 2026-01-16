@@ -2,187 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Adventure - Level 6</title>
+    <title>Level 6: Logical Decisions | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* THE CURVY DESIGN SYSTEM */
-        :root {
-            --main-color: #16a085;    /* Teal Treasure */
-            --list-blue: #2980b9;     /* Deep Blue */
-            --sunny-yellow: #f1c40f; 
-            --bg-color: #f9fbfd;
+        body { font-family: 'Lexend', sans-serif; background: #f0f9ff; margin: 0; text-align: center; color: #2c3e50; line-height: 1.6; }
+        header { background: #0d9488; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #0d9488;
         }
 
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* WAVY HEADER */
-        header {
-            background-color: var(--main-color);
-            height: 250px;
-            width: 100%;
-            color: white;
-            text-align: center;
-            padding-top: 40px;
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: var(--bg-color);
-            border-radius: 100% 100% 0 0;
-        }
-
-        /* NAVIGATION BAR */
-        nav {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            z-index: 10;
-            position: relative;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            border: 2px solid white;
-        }
-
-        nav a.active { background: var(--sunny-yellow); color: #2d3436; }
-
-        /* MASCOT */
-        .mascot-container {
-            text-align: center;
-            margin-top: -60px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .mascot {
-            width: 130px;
-            height: 130px;
-            background: white;
-            border-radius: 50%;
-            border: 6px solid var(--list-blue);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .mascot:hover { transform: scale(1.1); }
-
-        /* CONTENT CARD */
-        .card {
-            background: white;
-            width: 90%;
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 40px;
-            border-radius: 50px;
-            box-shadow: 0 20px 40px rgba(22, 160, 133, 0.1);
-            border: 10px solid #FFFFFF;
-            outline: 4px solid var(--main-color);
-        }
-
-        .editor-box {
-            border-radius: 30px;
-            overflow: hidden;
-            border: 4px solid #EEE;
-            margin: 30px 0;
-        }
-
-        /* NEXT BUTTON */
-        .next-btn {
-            display: inline-block;
-            background: var(--list-blue);
-            color: white;
-            padding: 20px 50px;
-            text-decoration: none;
-            font-size: 1.5rem;
-            border-radius: 60px;
-            font-weight: bold;
-            box-shadow: 0 10px 0 #1c5982;
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #0d9488; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #0f766e;
             transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
         }
-
-        .next-btn:hover { transform: translateY(4px); box-shadow: 0 6px 0 #1c5982; }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #0f766e; }
+        
+        h2 { color: #0f766e; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .logic-note { background: #f0fdfa; padding: 15px; border-left: 5px solid #0d9488; border-radius: 5px; font-style: italic; }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Lvl 1</a>
-            <a href="level2.html">Lvl 2</a>
-            <a href="level3.html">Lvl 3</a>
-            <a href="level4.html">Lvl 4</a>
-            <a href="level5.html">Lvl 5</a>
-            <a href="level6.html" class="active">Lvl 6</a>
-        </nav>
-        <h1>💎 Level 6: The Treasure List</h1>
-        <p>Learn how to store a whole collection of items in one place!</p>
-    </header>
+<header>
+    <h1>Level 6: Making Decisions 🚦</h1>
+</header>
 
-    <div class="mascot-container">
-        <div style="background: white; padding: 10px; border-radius: 15px; border: 2px solid var(--main-color); display: inline-block; margin-bottom: 10px;">
-            "A list is like a grocery bag for your data!" 🍎
-        </div><br>
-        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Treasure&backgroundColor=16a085" class="mascot" id="mascot">
-    </div>
-
-    <div class="card">
-        <h2>What is a List? 📂</h2>
-        <p>In Python, we put items inside <b>square brackets [ ]</b> and separate them with commas. <br>
-           <b>Example:</b> <code>fruits = ["Apple", "Banana", "Cherry"]</code></p>
-
+<div class="container">
+    <div class="lesson-card">
+        <h2>The Power of "If"</h2>
+        
+        <p>Until now, your code has been like a straight road—it runs from the top to the bottom without ever changing direction. But what if your program could think? In Level 6, we introduce <b>Conditional Logic</b>. Using <code>if</code> statements, you can tell Python to perform specific actions only when a certain condition is met. This is the "Brain" of your program, allowing it to evaluate situations and choose the best path forward.</p>
+        
         
 
-        <div class="editor-box">
+        <p>The syntax for an <code>if</code> statement is very specific in Python. We use comparison operators like <code>==</code> (equal to), <code>></code> (greater than), or <code><</code> (less than). A critical rule at <b>Flora World Coding</b>: always remember the <b>colon (:)</b> at the end of your condition and the <b>indentation</b> (the space) on the next line. This space tells Python exactly which lines of code belong inside the decision "block."</p>
+
+        <p>Logic is what transforms a simple calculator into an intelligent application. If a user enters the wrong password, the app shows an error. If a player’s health reaches zero, the game ends. These are all <code>if</code> statements in action. By mastering these branches, you are learning how to build complex systems that can handle thousands of different scenarios automatically.</p>
+        
+        <div class="trinket-wrapper">
             <iframe src="https://trinket.io/embed/python/fb43f91c6e1a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
-
-        <p><b>Challenge:</b> Add your favorite food to the list inside the <code>[ ]</code> and press Play!</p>
         
-        <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
-    <a href="level7.html" 
-       style="display: inline-block; 
-              background-color: #2980b9; 
-              color: white; 
-              padding: 20px 50px; 
-              text-decoration: none; 
-              font-size: 1.5rem; 
-              font-weight: bold; 
-              border-radius: 60px; 
-              box-shadow: 0 10px 0 #1c5982; 
-              font-family: 'Comic Sans MS', cursive, sans-serif;">
-       Enter Stage 2: Level 7 ➔
-    </a>
-</div>
+        <h2>Mastery Challenge</h2>
+        <div class="logic-note">
+            Try this: Create a variable called <code>age</code>. Write an <code>if</code> statement that checks if the age is greater than 18. If it is, print "You are an adult!" For an extra challenge, change the value of the variable to see if the message disappears!
+        </div>
+        
+        <a href="level7.html" class="next-btn">I'm a Logic Master! Go to Level 7 ➔</a>
     </div>
-
-    <script>
-        const mascot = document.getElementById('mascot');
-        const ding = new Audio('https://www.soundjay.com/button/sounds/button-3.mp3');
-        mascot.onclick = () => {
-            ding.play();
-            alert("Mascot: 'In Python, we start counting at 0, not 1! The first item is always at position 0.'");
-        };
-    </script>
+    
+    <p style="text-align: center;">
+        <a href="level5.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 5</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
 
 </body>
 </html>

@@ -2,36 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flora World - Level 24</title>
+    <title>Level 24: List Comprehensions | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #e74c3c; /* Battle Red */
-            --bg-color: #1a1a1a;
+        body { font-family: 'Lexend', sans-serif; background: #0f172a; margin: 0; text-align: center; color: #f1f5f9; line-height: 1.6; }
+        header { background: #111827; color: #2dd4bf; padding: 40px 20px; border-bottom: 4px solid #2dd4bf; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: #1e293b; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+            border: 2px solid #334155;
         }
-        body { font-family: 'Courier New', Courier, monospace; background: var(--bg-color); color: #ecf0f1; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { background: #000; width: 100%; text-align: center; padding: 60px 0; border-bottom: 4px solid var(--main-color); }
-        .card { background: #2c3e50; width: 90%; max-width: 850px; margin: 30px; padding: 40px; border-radius: 20px; border: 1px solid var(--main-color); box-shadow: 0 0 20px rgba(231, 76, 60, 0.3); }
-        .next-btn { display: inline-block; background: var(--main-color); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; }
-        .warning-text { color: #e74c3c; font-weight: bold; animation: blink 1s infinite; }
-        @keyframes blink { 50% { opacity: 0; } }
+
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #2dd4bf; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #2dd4bf; 
+            color: #0f172a; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #14b8a6;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
+        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #14b8a6; }
+        
+        h2 { color: #2dd4bf; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; color: #cbd5e1; }
+        .syntax-box { background: #0f172a; border: 1px solid #2dd4bf; padding: 20px; border-radius: 15px; font-family: monospace; color: #5eead4; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <header>
-        <h1 class="warning-text">⚠️ BOSS INCOMING ⚠️</h1>
-        <p>Using Functions to manage complex game events.</p>
-    </header>
-    <div class="card">
-        <h2>Organizing with Functions 📦</h2>
-        <p>As your game grows, your code gets long. <b>Functions</b> allow you to group code together. Instead of writing the battle rules every time, you just call <code>start_battle()</code>!</p>
+
+<header>
+    <h1>Level 24: Code Compression ⚡</h1>
+</header>
+
+<div class="container">
+    <div class="lesson-card">
+        <h2>Writing Pythonic Code</h2>
+        
+        <p>You’ve learned how to use loops to create lists, but as you become an expert, you’ll want your code to be faster to write and easier to read. In Level 24, we introduce <b>List Comprehensions</b>. At <b>Flora World Coding</b>, we call this the "Shortcut to Data." It allows you to transform one list into another in just one line, replacing four or five lines of traditional <code>for</code> loop code.</p>
 
         
 
-        <iframe src="https://trinket.io/embed/python/c479e11baeb6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>The technical syntax of a list comprehension follows a specific pattern: <code>[expression for item in list if condition]</code>. You are essentially telling Python: "Give me this result, for every item in this group, but only if it meets this rule." This is not just about typing less; it is actually faster for the computer to process. This efficiency is why List Comprehensions are one of the most beloved features of the Python language.</p>
+
+        <p>Why is this important for your graduation? Professional developers use comprehensions to filter large datasets instantly—like picking out every plant in a database that needs water. By mastering this, you move from writing "basic" scripts to writing "Pythonic" code. This term refers to code that uses the unique strengths of Python to be as clean and efficient as possible—a huge plus for any technical portfolio or AdSense-reviewed educational site.</p>
         
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="level25.html" class="next-btn">Level 25: The Final Certificate ➔</a>
+        <div class="syntax-box">
+            # The Old Way:<br>
+            new_list = []<br>
+            for x in range(10):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;new_list.append(x * 2)<br><br>
+            # The Pythonic Way:<br>
+            new_list = [x * 2 for x in range(10)]
         </div>
+
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/c479e11baeb6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Create a list of numbers from 1 to 10. Use a <b>List Comprehension</b> to create a new list that contains only the <i>even</i> numbers from the first list. Hint: Use <code>if x % 2 == 0</code> at the end of your comprehension!</p>
+        
+        <a href="level25.html" class="next-btn">I'm Ready for Graduation! Go to Level 25 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level23.html" style="color: #64748b; text-decoration: none; margin-right: 20px;">← Back to Level 23</a>
+        <a href="index.html" style="color: #64748b; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
+
 </body>
 </html>

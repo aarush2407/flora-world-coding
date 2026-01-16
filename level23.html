@@ -2,36 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flora World - Level 23</title>
+    <title>Level 23: Polymorphism | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #9b59b6; /* Mystic Purple */
-            --bg-color: #1a1a1a;
+        body { font-family: 'Lexend', sans-serif; background: #f0fdfa; margin: 0; text-align: center; color: #134e4a; line-height: 1.6; }
+        header { background: #0d9488; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #0d9488;
         }
-        body { font-family: 'Courier New', Courier, monospace; background: var(--bg-color); color: #ecf0f1; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { background: #000; width: 100%; text-align: center; padding: 60px 0; border-bottom: 4px solid var(--main-color); }
-        .card { background: #2c3e50; width: 90%; max-width: 850px; margin: 30px; padding: 40px; border-radius: 20px; border: 1px solid var(--main-color); }
-        .next-btn { display: inline-block; background: var(--main-color); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4); }
-        .dice-icon { font-size: 3rem; margin-bottom: 10px; }
+
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #0d9488; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #0f766e;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
+        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #0f766e; }
+        
+        h2 { color: #0f766e; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .poly-highlight { background: #ccfbf1; padding: 20px; border-radius: 15px; border-left: 5px solid #0d9488; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="dice-icon">🎲</div>
-        <h1>Level 23: Random Encounters</h1>
-        <p>Using the power of chance to make your game exciting.</p>
-    </header>
-    <div class="card">
-        <h2>The Roll of the Dice 🎲</h2>
-        <p>In games, we use <b>Random Numbers</b> to decide what happens. Using <code>random.randint(1, 10)</code> is like rolling a 10-sided die! Will you find a Rare Rose or a Grumpy Gnome?</p>
+
+<header>
+    <h1>Level 23: Many Shapes of Code 🎭</h1>
+</header>
+
+<div class="container">
+    <div class="lesson-card">
+        <h2>What is Polymorphism?</h2>
+        
+        <p>The word <b>Polymorphism</b> sounds complicated, but it simply means "many forms." In programming, it allows different classes to have methods with the exact same name, but different behaviors. At <b>Flora World Coding</b>, imagine we have a "Garden" that tells every plant to <code>grow()</code>. A Bamboo plant will grow tall and fast, while a Cactus grows slowly and stays small. Even though the command is the same, the result depends on the object!</p>
 
         
 
-        <iframe src="https://trinket.io/embed/python/7674c5b86886" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>Technically, polymorphism is often used alongside inheritance. You can have a list containing many different objects (a Rose, a Tree, and a Fern) and use a simple <code>for</code> loop to call <code>plant.bloom()</code> on all of them. Python is smart enough to look at each object and use the specific version of <code>bloom()</code> that belongs to that class. This makes your code incredibly flexible because you can add new types of plants later without ever changing the loop that makes them grow.</p>
+
+        <p>Why is this a high-value skill for developers? Polymorphism allows you to write "generic" code that works with many different types of data. In professional software, this is used for everything from rendering different types of shapes in a graphics engine to handling different payment methods (Credit Card, PayPal, Crypto) in an online store. Mastering this concept proves you can build scalable systems that are "open for extension but closed for modification."</p>
         
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="level24.html" class="next-btn">Level 24: Boss Battle Functions ➔</a>
+        <div class="poly-highlight">
+            <b>The "Common Interface":</b>
+            <p>Polymorphism works best when all your objects share a "Common Interface"—meaning they all agree to have a method with the same name, even if the code inside that method is totally different.</p>
         </div>
+
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/7674c5b86886" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Create two classes: <code>Bird</code> and <code>Plane</code>. Give both a method called <code>fly()</code>. The Bird should print "Flapping wings!" and the Plane should print "Starting engines!". Create a list containing both objects and use a loop to make both of them "fly" using the same command.</p>
+        
+        <a href="level24.html" class="next-btn">I'm a Polymorphism Master! Go to Level 24 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level22.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 22</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
+
 </body>
 </html>

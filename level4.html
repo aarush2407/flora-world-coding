@@ -2,173 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Adventure - Level 4</title>
+    <title>Level 4: Master of Strings | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* THE CURVY DESIGN SYSTEM */
-        :root {
-            --main-color: #EF5350;    /* Logic Red */
-            --go-green: #66BB6A;      /* Success Green */
-            --sunny-yellow: #FFCA28; 
-            --bg-color: #F4F7F6;
+        body { font-family: 'Lexend', sans-serif; background: #fff7ed; margin: 0; text-align: center; color: #2c3e50; line-height: 1.6; }
+        header { background: #f39c12; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #f39c12;
         }
 
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* WAVY HEADER */
-        header {
-            background-color: var(--main-color);
-            height: 250px;
-            width: 100%;
-            color: white;
-            text-align: center;
-            padding-top: 40px;
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: var(--bg-color);
-            border-radius: 100% 100% 0 0;
-        }
-
-        /* NAVIGATION BAR */
-        nav {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            z-index: 10;
-            position: relative;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            border: 2px solid white;
-        }
-
-        nav a.active { background: var(--sunny-yellow); color: #2d3436; }
-
-        /* MASCOT */
-        .mascot-container {
-            text-align: center;
-            margin-top: -60px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .mascot {
-            width: 130px;
-            height: 130px;
-            background: white;
-            border-radius: 50%;
-            border: 6px solid var(--go-green);
-            cursor: pointer;
-            transition: 0.3s;
-            animation: bounce 3s infinite;
-        }
-
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-
-        /* CONTENT CARD */
-        .card {
-            background: white;
-            width: 90%;
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 40px;
-            border-radius: 50px;
-            box-shadow: 0 20px 40px rgba(239, 83, 80, 0.1);
-            border: 10px solid #FFFFFF;
-            outline: 4px solid var(--main-color);
-        }
-
-        .editor-box {
-            border-radius: 30px;
-            overflow: hidden;
-            border: 4px solid #EEE;
-            margin: 30px 0;
-        }
-
-        /* NEXT BUTTON */
-        .next-btn {
-            display: inline-block;
-            background: var(--go-green);
-            color: white;
-            padding: 20px 50px;
-            text-decoration: none;
-            font-size: 1.5rem;
-            border-radius: 60px;
-            font-weight: bold;
-            box-shadow: 0 10px 0 #388E3C;
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #f39c12; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #d35400;
             transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
         }
-
-        .next-btn:hover { transform: translateY(4px); box-shadow: 0 6px 0 #388E3C; }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #d35400; }
+        
+        h2 { color: #d35400; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Level 1</a>
-            <a href="level2.html">Level 2</a>
-            <a href="level3.html">Level 3</a>
-            <a href="level4.html" class="active">Level 4</a>
-        </nav>
-        <h1>🚦 Level 4: Decision Time</h1>
-        <p>Teach your computer how to make choices using 'If'!</p>
-    </header>
+<header>
+    <h1>Level 4: String Secrets 🧵</h1>
+</header>
 
-    <div class="mascot-container">
-        <div style="background: white; padding: 10px; border-radius: 15px; border: 2px solid var(--main-color); display: inline-block; margin-bottom: 10px;">
-            "If the light is green, we GO!" 🟢
-        </div><br>
-        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=LogicBot&backgroundColor=66BB6A" class="mascot" id="mascot">
-    </div>
-
-    <div class="card">
-        <h2>The 'If' Statement 🧠</h2>
-        <p>In Python, we use <b>if</b> to check if something is true. If it is, the computer runs the code inside!</p>
-
+<div class="container">
+    <div class="lesson-card">
+        <h2>What are Strings?</h2>
         
+        <p>In the previous level, we mastered numbers, but now we need to master human language. In Python, any sequence of characters inside quotes is called a <b>String</b>. Whether it’s a single letter, a full sentence, or even a line of emojis, strings are how we tell the computer to handle text. At <b>Flora World Coding</b>, mastering strings is the key to creating dialogue for game characters and writing messages to your users.</p>
+        
+        <p>One of the coolest things you can do with strings is called <b>Concatenation</b>. This is a fancy coding word for "gluing strings together." In Python, you can actually use the <code>+</code> sign to join two pieces of text into one. For example, <code>"Hello" + " World"</code> becomes <code>"Hello World"</code>. You can also multiply strings! If you tell Python to do <code>"🌱" * 5</code>, it will actually print five sprouts in a row. This flexibility makes Python one of the most powerful languages for text manipulation.</p>
 
-        <div class="editor-box">
+        <p>Understanding how to manipulate text is a critical skill for modern software developers. From building search engines that understand your queries to creating automated chat-bots, strings are everywhere. By learning how to store and combine these data types, you are building the foundation for user interaction. In the editor below, you will practice combining your variables from Level 2 with the string techniques you're learning now.</p>
+        
+        <div class="trinket-wrapper">
             <iframe src="https://trinket.io/embed/python/ce64e2f9e89e" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
-
-        <p><b>Challenge:</b> Change the password variable to "magic" to see the secret message!</p>
         
-        <div style="text-align: center;">
-            <a href="level5.html" class="next-btn">Next: Level 5 ➔</a>
-        </div>
+        <h2>Mastery Challenge</h2>
+        <p>Create a variable for your <code>first_name</code> and another for your <code>last_name</code>. Use the <code>+</code> sign to combine them into a third variable called <code>full_name</code> and print it. For an extra challenge, try to print your name 10 times using the <code>*</code> operator!</p>
+        
+        <a href="level5.html" class="next-btn">I'm a String Specialist! Go to Level 4 ➔</a>
     </div>
-
-    <script>
-        const mascot = document.getElementById('mascot');
-        const pop = new Audio('https://www.soundjay.com/button/sounds/button-16.mp3');
-        mascot.onclick = () => {
-            pop.play();
-            alert("Mascot: 'Computers are smart, but they only do what you tell them!'");
-        };
-    </script>
+    
+    <p style="text-align: center;">
+        <a href="level3.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 3</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
 
 </body>
 </html>

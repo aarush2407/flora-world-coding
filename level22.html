@@ -2,37 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flora World - Level 22</title>
+    <title>Level 22: Class Inheritance | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #3498db; /* Mana Blue */
-            --bg-color: #1a1a1a;
+        body { font-family: 'Lexend', sans-serif; background: #f1f5f9; margin: 0; text-align: center; color: #0f172a; line-height: 1.6; }
+        header { background: #1e293b; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #1e293b;
         }
-        body { font-family: 'Courier New', Courier, monospace; background: var(--bg-color); color: #ecf0f1; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { background: #000; width: 100%; text-align: center; padding: 60px 0; border-bottom: 4px solid var(--main-color); }
-        .card { background: #2c3e50; width: 90%; max-width: 850px; margin: 30px; padding: 40px; border-radius: 20px; border: 1px solid var(--main-color); }
-        .next-btn { display: inline-block; background: var(--main-color); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; }
-        .stat-box { background: #000; padding: 10px; border: 1px dashed var(--main-color); color: var(--main-color); display: inline-block; margin-bottom: 20px; }
+
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #1e293b; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #000000;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
+        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #000000; }
+        
+        h2 { color: #1e293b; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .inheritance-tree { background: #e2e8f0; border: 2px solid #1e293b; padding: 20px; border-radius: 15px; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Level 22: Player Stats</h1>
-        <p>Giving your hero life and a backpack.</p>
-    </header>
-    <div class="card">
-        <h2>Tracking Data 📊</h2>
-        <p>To make a game feel real, we need to store information about the player. We use an <b>Integer</b> for Health and a <b>List</b> for items they find.</p>
+
+<header>
+    <h1>Level 22: Family Trees of Code 🌳</h1>
+</header>
+
+<div class="container">
+    <div class="lesson-card">
+        <h2>What is Inheritance?</h2>
         
-        <div class="stat-box">HP: 100 | Inventory: ['Seed', 'Map']</div>
+        <p>In the previous level, we learned how to build blueprints called Classes. But what if you have two blueprints that are very similar? For example, a "Rose" and a "Sunflower" are both "Plants." In Level 22, we introduce <b>Inheritance</b>. At <b>Flora World Coding</b>, we use inheritance to let a new class take on all the attributes and methods of an existing class. This saves time and prevents us from writing the same code twice!</p>
 
         
 
-        <iframe src="https://trinket.io/embed/python/ea4f82639e6f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>The technical structure involves a <b>Parent Class</b> (the original) and a <b>Child Class</b> (the new one). When you define the child class, you put the parent class name in parentheses: <code>class Rose(Plant):</code>. This tells Python that a Rose is a specific "type" of Plant. The child class automatically inherits everything from the parent, but it can also have its own unique features or even "override" parent methods to do something differently.</p>
+
+        <p>Inheritance is a fundamental pillar of professional software development. It allows developers to create vast systems of related objects without making mistakes. Think of a game where all "Enemies" can move and attack, but a "BossEnemy" has extra health and special moves. By using inheritance, you create a cleaner, more organized codebase that is easier to maintain and update—skills that are essential for any AdSense-approved technical blog or academy.</p>
         
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="level23.html" class="next-btn">Level 23: Random Encounters ➔</a>
+        <div class="inheritance-tree">
+            <b>The "Is-A" Relationship:</b>
+            <ul>
+                <li>A <b>Car</b> <i>is-a</i> <b>Vehicle</b></li>
+                <li>A <b>Dog</b> <i>is-a</i> <b>Animal</b></li>
+                <li>A <b>Sunflower</b> <i>is-a</i> <b>Plant</b></li>
+            </ul>
+            <p>If it fits the "Is-A" rule, it's a perfect candidate for Inheritance!</p>
         </div>
+
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/ea4f82639e6f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Create a Parent class called <code>Animal</code> with a method <code>speak()</code>. Then, create a Child class called <code>Dog</code> that inherits from Animal. Can you make the Dog say "Woof!" while the Animal says "Hello"?</p>
+        
+        <a href="level23.html" class="next-btn">I'm an Inheritance Expert! Go to Level 23 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level21.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 21</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
+
 </body>
 </html>

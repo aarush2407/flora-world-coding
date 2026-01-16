@@ -2,34 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flora World - Level 16</title>
+    <title>Level 16: Return Values | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #9b59b6; /* Amethyst Purple */
-            --bg-color: #f5eef8;
+        body { font-family: 'Lexend', sans-serif; background: #ecfdf5; margin: 0; text-align: center; color: #064e3b; line-height: 1.6; }
+        header { background: #10b981; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #10b981;
         }
-        body { font-family: 'Comic Sans MS', cursive, sans-serif; background: var(--bg-color); margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%); width: 100%; color: white; text-align: center; padding: 40px 0; }
-        .card { background: white; width: 90%; max-width: 800px; margin: 30px; padding: 40px; border-radius: 50px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border: 4px solid var(--main-color); }
-        .next-btn { display: inline-block; background: var(--main-color); color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 8px 0 #6c3483; }
+
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #10b981; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #047857;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
+        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #047857; }
+        
+        h2 { color: #047857; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .return-tip { background: #d1fae5; border-left: 5px solid #10b981; padding: 15px; border-radius: 8px; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Level 16: Polymorphism</h1>
-        <p>One command, many different reactions!</p>
-    </header>
-    <div class="card">
-        <h2>The Power of Variety 🎭</h2>
-        <p>Polymorphism allows different classes to have methods with the <b>same name</b>, but <b>different behaviors</b>. It makes our code flexible!</p>
+
+<header>
+    <h1>Level 16: The Return Harvest 🧺</h1>
+</header>
+
+<div class="container">
+    <div class="lesson-card">
+        <h2>Getting Results from Functions</h2>
+        
+        <p>Until now, our functions have been doing work and printing results directly to the screen. But in real-world programming, functions often need to calculate a value and "hand it back" to the main program to be used later. In Level 16, we introduce the <b>return</b> keyword. At <b>Flora World Coding</b>, we think of this like sending a robot into a garden to pick a fruit; the robot doesn't just eat the fruit there—it brings it back to you so you can use it in a recipe.</p>
 
         
 
-        <iframe src="https://trinket.io/embed/python/4ee2ca6a4a13" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>The <code>return</code> statement immediately ends the function and sends the specified value back to the line of code that called it. This is technically different from <code>print()</code>. While <code>print()</code> just shows a message to the human user, <code>return</code> allows you to save the function's output into a variable. For example, <code>my_result = calculate_score()</code> captures whatever the function produces so you can use it for math or logic later in your script.</p>
+
+        <p>Why is this a requirement for professional coding? Because it allows functions to be "pure" and modular. A function that returns a value can be used anywhere: in a web app, a mobile game, or a data analysis tool. It doesn't care how the result is shown; it only cares about calculating the right answer. Mastering return values is a massive step toward understanding how professional software handles complex data pipelines and API responses.</p>
         
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="level17.html" class="next-btn">Level 17: Reading Files ➔</a>
+        <div class="return-tip">
+            <b>Important Coding Note:</b> Once a function hits a <code>return</code> statement, it stops completely. Any code written <i>after</i> the return line inside the function will be ignored by Python!
         </div>
+
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/4ee2ca6a4a13" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Create a function called <code>multiply(a, b)</code> that <b>returns</b> the product of the two numbers. Outside the function, call it and store the result in a variable called <code>total</code>. Finally, print the <code>total</code> to see your returned value in action!</p>
+        
+        <a href="level17.html" class="next-btn">I'm a Return Specialist! Go to Level 17 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level15.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 15</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
+
 </body>
 </html>

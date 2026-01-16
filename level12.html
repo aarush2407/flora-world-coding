@@ -2,92 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Adventure - Level 12</title>
+    <title>Level 12: List Methods | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #27ae60;    /* Forest Green */
-            --accent-color: #f39c12;  /* Archive Gold */
-            --paper-color: #fdf5e6;
-            --bg-color: #f4f7f6;
+        body { font-family: 'Lexend', sans-serif; background: #f7fee7; margin: 0; text-align: center; color: #1a2e05; line-height: 1.6; }
+        header { background: #65a30d; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #65a30d;
         }
 
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #65a30d; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #3f6212;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
         }
-
-        header {
-            background-color: var(--main-color);
-            height: 250px; width: 100%; color: white; text-align: center; padding-top: 40px; position: relative;
-            background: linear-gradient(135deg, #27ae60 0%, #2c3e50 100%);
-        }
-
-        header::after {
-            content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 100px;
-            background: var(--bg-color); border-radius: 100% 100% 0 0;
-        }
-
-        nav { margin-top: 20px; display: flex; justify-content: center; gap: 10px; z-index: 10; position: relative; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: white; background: rgba(255, 255, 255, 0.1); padding: 8px 15px; border-radius: 50px; font-size: 0.8rem; border: 1px solid white; }
-        nav a.active { background: var(--accent-color); color: white; border: none; }
-
-        .mascot-container { text-align: center; margin-top: -60px; position: relative; z-index: 5; }
-        .mascot { width: 130px; height: 130px; background: white; border-radius: 50%; border: 6px solid var(--main-color); cursor: pointer; }
-
-        .card {
-            background: white; width: 90%; max-width: 850px; margin: 30px auto; padding: 40px;
-            border-radius: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border: 10px solid #FFFFFF; outline: 4px solid var(--main-color);
-        }
-
-        .editor-box { border-radius: 30px; overflow: hidden; border: 4px solid #EEE; margin: 30px 0; }
-
-        .next-btn {
-            display: inline-block; background: var(--main-color); color: white; padding: 18px 45px;
-            text-decoration: none; font-size: 1.3rem; border-radius: 60px; font-weight: bold;
-            box-shadow: 0 8px 0 #1e8449; transition: 0.2s;
-        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #3f6212; }
+        
+        h2 { color: #3f6212; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .method-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #f0fdf4; border-radius: 10px; overflow: hidden; }
+        .method-table th, .method-table td { padding: 12px; border: 1px solid #d9f99d; text-align: left; }
+        .method-table th { background: #d9f99d; }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">L1</a><a href="level2.html">L2</a><a href="level3.html">L3</a>
-            <a href="level4.html">L4</a><a href="level5.html">L5</a><a href="level6.html">L6</a>
-            <a href="level7.html">L7</a><a href="level8.html">L8</a><a href="level9.html">L9</a>
-            <a href="level10.html">L10</a><a href="level11.html">L11</a><a href="level12.html" class="active">L12</a>
-        </nav>
-        <h1>📁 Level 12: The Eternal Memory</h1>
-        <p>Learn how to save and read data using real text files!</p>
-    </header>
+<header>
+    <h1>Level 12: Growing Your Lists 🌱</h1>
+</header>
 
-    <div class="mascot-container">
-        <div style="background: white; padding: 10px; border-radius: 15px; border: 2px solid var(--main-color); display: inline-block; margin-bottom: 10px;">
-            "We are writing history today! Let's save some files." 📜
-        </div><br>
-        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Archivist&backgroundColor=27ae60" class="mascot" id="mascot">
-    </div>
+<div class="container">
+    <div class="lesson-card">
+        <h2>Modifying Data on the Fly</h2>
+        
+        <p>In Level 11, we learned how to create a list, but a static list isn't very helpful if your program needs to change. Imagine a game where you pick up a new item—the list needs to grow! In Level 12, we explore <b>List Methods</b>. These are built-in Python tools that allow you to add, remove, and sort items within your lists. At <b>Flora World Coding</b>, we consider this the "gardening" phase of coding, where you learn to manage your digital inventory.</p>
 
-    <div class="card">
-        <h2>Reading and Writing ✍️</h2>
-        <p>In Python, we use <code>open()</code> to create or read a file. We use <b>'w'</b> to write and <b>'r'</b> to read.</p>
+        <p>The two most important methods you will use are <code>.append()</code> and <code>.remove()</code>. When you use <code>list_name.append("item")</code>, Python adds that item to the very end of your list. If you need to get rid of something, <code>list_name.remove("item")</code> will search the list and delete the first instance of that item. It’s important to note that these methods "mutate" or change the original list permanently, so you have to use them with care!</p>
 
         
 
-        <div class="editor-box">
+        <p>Why do AdSense-approved sites teach these methods early? Because dynamic data is what makes modern apps work. Your "Followers" list on social media uses <code>append</code> when someone hits follow and a removal method when they unfollow. By mastering these commands, you are moving beyond simple scripts and starting to build logic that can handle real-world, changing information. This is a vital step toward creating interactive databases and gaming systems.</p>
+        
+        <table class="method-table">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>What it does</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>.append(x)</code></td>
+                    <td>Adds item x to the end of the list</td>
+                </tr>
+                <tr>
+                    <td><code>.remove(x)</code></td>
+                    <td>Removes the first item that matches x</td>
+                </tr>
+                <tr>
+                    <td><code>.sort()</code></td>
+                    <td>Organizes the list alphabetically or numerically</td>
+                </tr>
+                <tr>
+                    <td><code>len(list)</code></td>
+                    <td>Tells you how many items are in the list</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="trinket-wrapper">
             <iframe src="https://trinket.io/embed/python/1fa1305e2024" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
-
-        <div style="text-align: center;">
-            <a href="level13.html" class="next-btn">Enter Stage 3: Professional OOP ➔</a>
-        </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Create a list called <code>inventory</code>. Use <code>.append()</code> to add three items. Then, use <code>print(len(inventory))</code> to see how many items you have. Finally, try to <code>.remove()</code> one item and print the list again to see it disappear!</p>
+        
+        <a href="level13.html" class="next-btn">I'm a Data Gardener! Go to Level 13 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level11.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 11</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
 
 </body>
 </html>

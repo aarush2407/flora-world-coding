@@ -2,175 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Adventure - Level 5</title>
+    <title>Level 5: User Input | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* THE CURVY DESIGN SYSTEM */
-        :root {
-            --main-color: #8E44AD;    /* Deep Loop Purple */
-            --loop-blue: #3498DB;     /* Action Blue */
-            --sunny-yellow: #F1C40F; 
-            --bg-color: #F8F9FA;
+        body { font-family: 'Lexend', sans-serif; background: #fff1f2; margin: 0; text-align: center; color: #2c3e50; line-height: 1.6; }
+        header { background: #e11d48; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #e11d48;
         }
 
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* WAVY HEADER */
-        header {
-            background-color: var(--main-color);
-            height: 250px;
-            width: 100%;
-            color: white;
-            text-align: center;
-            padding-top: 40px;
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: var(--bg-color);
-            border-radius: 100% 100% 0 0;
-        }
-
-        /* NAVIGATION BAR */
-        nav {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            z-index: 10;
-            position: relative;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            border: 2px solid white;
-        }
-
-        nav a.active { background: var(--sunny-yellow); color: #2d3436; }
-
-        /* MASCOT */
-        .mascot-container {
-            text-align: center;
-            margin-top: -60px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .mascot {
-            width: 130px;
-            height: 130px;
-            background: white;
-            border-radius: 50%;
-            border: 6px solid var(--loop-blue);
-            cursor: pointer;
-            transition: 0.3s;
-            /* Spinning animation for the loop level! */
-            animation: spin 10s infinite linear;
-        }
-
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        /* CONTENT CARD */
-        .card {
-            background: white;
-            width: 90%;
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 40px;
-            border-radius: 50px;
-            box-shadow: 0 20px 40px rgba(142, 68, 173, 0.1);
-            border: 10px solid #FFFFFF;
-            outline: 4px solid var(--main-color);
-        }
-
-        .editor-box {
-            border-radius: 30px;
-            overflow: hidden;
-            border: 4px solid #EEE;
-            margin: 30px 0;
-        }
-
-        /* NEXT BUTTON */
-        .next-btn {
-            display: inline-block;
-            background: var(--loop-blue);
-            color: white;
-            padding: 20px 50px;
-            text-decoration: none;
-            font-size: 1.5rem;
-            border-radius: 60px;
-            font-weight: bold;
-            box-shadow: 0 10px 0 #2980B9;
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #e11d48; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #9f1239;
             transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
         }
-
-        .next-btn:hover { transform: translateY(4px); box-shadow: 0 6px 0 #2980B9; }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #9f1239; }
+        
+        h2 { color: #9f1239; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Level 1</a>
-            <a href="level2.html">Level 2</a>
-            <a href="level3.html">Level 3</a>
-            <a href="level4.html">Level 4</a>
-            <a href="level5.html" class="active">Level 5</a>
-        </nav>
-        <h1>🔄 Level 5: The Loop-de-Loop</h1>
-        <p>Don't repeat yourself—make the computer do the hard work!</p>
-    </header>
+<header>
+    <h1>Level 5: Talking Back 🗣️</h1>
+</header>
 
-    <div class="mascot-container">
-        <div style="background: white; padding: 10px; border-radius: 15px; border: 2px solid var(--main-color); display: inline-block; margin-bottom: 10px;">
-            "I can run 100 times in 1 second! Spin me!" 🌀
-        </div><br>
-        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Looping&backgroundColor=3498DB" class="mascot" id="mascot">
-    </div>
+<div class="container">
+    <div class="lesson-card">
+        <h2>What is User Input?</h2>
+        
+        <p>Up until now, you have been the one writing all the data into the code. But real-world apps like Instagram or Netflix need to listen to the user. In Python, we use the <code>input()</code> function to pause the program and wait for the user to type something. This is the "Ear" of your program, allowing your code to gather information, names, or choices from the person sitting at the keyboard.</p>
+        
+        <p>The <code>input()</code> function always captures information as a <b>String</b>. When you write <code>name = input("What is your name? ")</code>, Python displays the question, catches the user's answer, and stores it inside the variable <code>name</code>. A key technical tip for <b>Flora World Coding</b> students: if you want the user to type a number for math, you must wrap your input in an <code>int()</code> function to convert it from text into a number!</p>
 
-    <div class="card">
-        <h2>What is a Loop? 🔁</h2>
-        <p>A <b>For Loop</b> tells Python: "Do this action for every item in a list" or "Do this action 10 times."</p>
-
+        <p>Mastering input is the first step toward building interactive games and smart tools. Without input, software is just a static display. With it, you can create "Choose Your Own Adventure" stories, login screens, or personalized calculators. This interactivity is what makes programming so powerful—it allows you to build experiences that are different for every single person who uses them.</p>
+        
         
 
-        <div class="editor-box">
+        <div class="trinket-wrapper">
             <iframe src="https://trinket.io/embed/python/e70778ccdeed" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
-
-        <p><b>Challenge:</b> In the code, change the number inside <code>range(5)</code> to <b>100</b> and watch the computer go crazy!</p>
         
-        <div style="text-align: center;">
-            <a href="level6.html" class="next-btn">Next: Level 6 ➔</a>
-        </div>
+        <h2>Mastery Challenge</h2>
+        <p>Write a program that asks the user for their favorite color. Then, make the computer reply with a message like: "Oh! [Color] is my favorite too!" using the string concatenation you learned in Level 4.</p>
+        
+        <a href="level6.html" class="next-btn">I'm an Interaction Expert! Go to Level 6 ➔</a>
     </div>
-
-    <script>
-        const mascot = document.getElementById('mascot');
-        const whirl = new Audio('https://www.soundjay.com/misc/sounds/magic-chime-01.mp3');
-        mascot.onclick = () => {
-            whirl.play();
-            alert("Mascot: 'If I had a loop, I could eat 1,000 pizzas in a minute!'");
-        };
-    </script>
+    
+    <p style="text-align: center;">
+        <a href="level4.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 4</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
 
 </body>
 </html>

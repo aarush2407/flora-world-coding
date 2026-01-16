@@ -2,213 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Adventure - Level 3</title>
+    <title>Level 3: Math & Numbers | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* THE CURVY DESIGN SYSTEM (Matching Previous Levels) */
-        :root {
-            --main-color: #F39C12;    /* Energetic Orange/Yellow */
-            --soft-purple: #9B59B6;   
-            --sunny-yellow: #F1C40F; 
-            --bg-color: #F9F9FF;
-            --text-dark: #2D3436;
+        body { font-family: 'Lexend', sans-serif; background: #f5f3ff; margin: 0; text-align: center; color: #2c3e50; line-height: 1.6; }
+        header { background: #8e44ad; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #8e44ad;
         }
 
-        body {
-            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* WAVY HEADER */
-        header {
-            background-color: var(--main-color);
-            height: 250px;
-            color: white;
-            text-align: center;
-            padding-top: 40px;
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: var(--bg-color);
-            border-radius: 100% 100% 0 0;
-        }
-
-        /* NAVIGATION BAR */
-        nav {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            z-index: 10;
-            position: relative;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-            border: 2px solid white;
-        }
-
-        nav a.active {
-            background: white;
-            color: var(--main-color);
-        }
-
-        /* MASCOT STYLING */
-        .mascot-container {
-            text-align: center;
-            margin-top: -60px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .mascot {
-            width: 130px;
-            height: 130px;
-            background: white;
-            border-radius: 50%;
-            border: 6px solid var(--soft-purple);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: 0.3s;
-            animation: shake 4s infinite ease-in-out;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            75% { transform: rotate(-5deg); }
-        }
-
-        /* MAIN CONTENT CARD */
-        .card {
-            background: white;
-            width: 90%;
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 40px;
-            border-radius: 50px;
-            box-shadow: 0 20px 40px rgba(243, 156, 18, 0.1);
-            border: 10px solid #FFFFFF;
-            outline: 4px solid var(--main-color);
-        }
-
-        .editor-box {
-            border-radius: 30px;
-            overflow: hidden;
-            border: 4px solid #F1F2F6;
-            margin: 30px 0;
-        }
-
-        /* ACTION BUTTONS */
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .nav-btn {
-            display: inline-block;
-            background: var(--soft-purple);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border-radius: 60px;
-            font-weight: bold;
-            box-shadow: 0 8px 0 #7d3c98;
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #8e44ad; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #703688;
             transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
         }
-
-        .nav-btn:hover { transform: translateY(4px); box-shadow: 0 4px 0 #7d3c98; }
-
-        .speech-bubble {
-            background: #fff;
-            border-radius: 20px;
-            padding: 15px;
-            display: inline-block;
-            margin-bottom: 10px;
-            border: 3px solid var(--main-color);
-            position: relative;
-        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #703688; }
+        
+        h2 { color: #703688; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Level 1</a>
-            <a href="level2.html">Level 2</a>
-            <a href="level3.html" class="active">Level 3</a>
-        </nav>
-        <h1>➕ Python Math Wizard</h1>
-        <p>Computers are super fast at math! Let's use Python as a calculator.</p>
-    </header>
+<header>
+    <h1>Level 3: Coding Calculations 🔢</h1>
+</header>
 
-    <div class="mascot-container">
-        <div class="speech-bubble" id="bubble">Computers don't use 'x' for multiply, they use '*' 🌟</div><br>
-        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=MathBot&backgroundColor=ffd33d" 
-             class="mascot" id="mascot">
-    </div>
-
-    <div class="card">
-        <h2>Level 3: Numbers & Operators 🔢</h2>
-        <p>In Python, you can do math like this:<br>
-           <code>5 + 5</code> (Add), <code>10 - 2</code> (Subtract), <code>4 * 2</code> (Multiply).</p>
+<div class="container">
+    <div class="lesson-card">
+        <h2>Numbers in Python</h2>
         
-        <div class="editor-box">
+        <p>In the previous levels, we learned how to store words, but computers were originally built to be massive calculators! In Level 3, we dive into <b>Integers</b> (whole numbers) and <b>Floats</b> (numbers with decimals). Whether you are calculating the damage a hero takes in a game or determining the growth rate of a plant in <b>Flora World</b>, understanding how Python handles math is essential for every developer.</p>
+        
+        <p>Python uses standard symbols for math, but with a few digital twists. We use <code>+</code> for addition and <code>-</code> for subtraction. However, for multiplication, we use the asterisk <code>*</code>, and for division, we use the forward slash <code>/</code>. One of the most powerful features is that you can perform math directly inside variables. For example, <code>total_seeds = 10 + 5</code> instantly stores the result, allowing your program to perform complex logic with very little code.</p>
+
+        <p>Why do we need this for a coding academy? Because logic is built on math. Every time a character moves across a screen or a "Like" count increases on Instagram, math is happening behind the scenes. By mastering these operators, you are learning how to manipulate the data you stored in Level 2. In the coding window below, you will practice combining variables with math to solve problems automatically.</p>
+        
+        <div class="trinket-wrapper">
             <iframe src="https://trinket.io/embed/python/8bd64334a6b8" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
-
-        <p><b>Challenge:</b> In the code, try to find the <code>total</code> and change the numbers to see the answer change!</p>
         
-       <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
-    <a href="level4.html" 
-       style="display: inline-block; 
-              background-color: #27ae60; 
-              color: white; 
-              padding: 20px 50px; 
-              text-decoration: none; 
-              font-size: 1.5rem; 
-              font-weight: bold; 
-              border-radius: 60px; 
-              box-shadow: 0 10px 0 #1e8449; 
-              font-family: 'Comic Sans MS', cursive, sans-serif;
-              transition: 0.2s;">
-       Start Stage 2: Level 4 ➔
-    </a>
-</div>
+        <h2>Mastery Challenge</h2>
+        <p>Create a variable called <code>width</code> and another called <code>height</code>. Multiply them together to find the <code>area</code> and print the result. Can you also try to divide your area by 2? This is the foundation of building game physics!</p>
+        
+        <a href="level4.html" class="next-btn">I'm a Math Master! Go to Level 4 ➔</a>
     </div>
-
-    <script>
-        const mascot = document.getElementById('mascot');
-        const bubble = document.getElementById('bubble');
-        const magicSound = new Audio('https://www.soundjay.com/misc/sounds/magic-chime-01.mp3');
-
-        mascot.onclick = () => {
-            magicSound.play();
-            bubble.innerText = "Did you know? Python can calculate 2 to the power of 1000 instantly! ⚡";
-            mascot.style.transform = "scale(1.2)";
-            setTimeout(() => { mascot.style.transform = "scale(1)"; }, 300);
-        };
-    </script>
+    
+    <p style="text-align: center;">
+        <a href="level2.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 2</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
 
 </body>
 </html>

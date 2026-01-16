@@ -2,37 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flora World - Level 21</title>
+    <title>Level 21: Classes & Objects | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #2ecc71; 
-            --bg-color: #1a1a1a; /* Dark Mode */
+        body { font-family: 'Lexend', sans-serif; background: #faf5ff; margin: 0; text-align: center; color: #3b0764; line-height: 1.6; }
+        header { background: #7c3aed; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #7c3aed;
         }
-        body { font-family: 'Courier New', Courier, monospace; background: var(--bg-color); color: #ecf0f1; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { background: #000; width: 100%; text-align: center; padding: 60px 0; border-bottom: 4px solid var(--main-color); }
-        .brand-name { color: var(--main-color); font-weight: bold; margin-bottom: 10px; }
-        .card { background: #2c3e50; width: 90%; max-width: 850px; margin: 30px; padding: 40px; border-radius: 20px; box-shadow: 0 0 20px rgba(46, 204, 113, 0.2); border: 1px solid var(--main-color); }
-        .next-btn { display: inline-block; background: var(--main-color); color: #000; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; }
-        code { background: #000; color: #2ecc71; padding: 3px 6px; }
+
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #7c3aed; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #5b21b6;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
+        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #5b21b6; }
+        
+        h2 { color: #5b21b6; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .oop-box { background: #f5f3ff; border: 2px solid #7c3aed; padding: 20px; border-radius: 15px; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="brand-name">🌿 FLORA WORLD: THE GAME</div>
-        <h1>Level 21: The Game Engine</h1>
-        <p>Creating the heartbeat of your program.</p>
-    </header>
-    <div class="card">
-        <h2>The While True Loop 🔄</h2>
-        <p>A game needs to stay open. We use <code>while True:</code> to keep the game "alive" so the player can keep making choices until they decide to <code>break</code> the loop.</p>
+
+<header>
+    <h1>Level 21: The Blueprint of Code 🏗️</h1>
+</header>
+
+<div class="container">
+    <div class="lesson-card">
+        <h2>What are Classes and Objects?</h2>
+        
+        <p>Until now, our data and our functions have lived in separate worlds. But in the real world, things have both <b>properties</b> (data) and <b>actions</b> (functions). In Level 21, we introduce **Classes**. At **Flora World Coding**, we think of a Class as a "blueprint." If you want to create a garden full of thousands of different flowers, you don't write code for each one. You create a "Flower" blueprint (Class) and then sprout as many individual "Flowers" (Objects) as you need.</p>
 
         
 
-        <iframe src="https://trinket.io/embed/python/024f24c5ec94" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>Technically, a Class is a way to bundle data and functionality together. We use the <code>class</code> keyword followed by a name. Inside, we use a special function called <code>__init__</code> to set up the initial properties of our object. We also use the <code>self</code> keyword, which is a reference to the specific object we are currently working on. This allows Python to keep track of which "Flower" is currently blooming or being watered within a massive list of objects.</p>
+
+        <p>Why is Object-Oriented Programming (OOP) the gold standard for AdSense-ready content? Because it is how almost all professional software is built today. From the characters in a video game to the windows in your web browser, everything is an "Object." Mastering classes shows that you understand how to organize complex systems into manageable, reusable parts. This is the skill that separates junior coders from senior software architects.</p>
         
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="level22.html" class="next-btn">Level 22: Player Stats ➔</a>
+        <div class="oop-box">
+            <b>The OOP Vocabulary:</b>
+            <ul>
+                <li><b>Class:</b> The blueprint (e.g., the idea of a "Plant").</li>
+                <li><b>Object:</b> The actual thing created from the blueprint (e.g., "Sunflower").</li>
+                <li><b>Attribute:</b> A piece of data inside the object (e.g., <code>color = "Yellow"</code>).</li>
+                <li><b>Method:</b> A function that belongs to the object (e.g., <code>bloom()</code>).</li>
+            </ul>
         </div>
+
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/024f24c5ec94" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Create a class called <code>Car</code> with attributes for <code>brand</code> and <code>color</code>. Then, create two different objects (cars) from that blueprint and print their unique details. Can you change the color of just one car without affecting the other?</p>
+        
+        <a href="level22.html" class="next-btn">I'm an Object Architect! Go to Level 22 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level20.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 20</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
+
 </body>
 </html>

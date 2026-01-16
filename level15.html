@@ -2,35 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flora World - Level 15</title>
+    <title>Level 15: Function Parameters | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #16a085; /* Cool Teal */
-            --bg-color: #e8f8f5;
+        body { font-family: 'Lexend', sans-serif; background: #fff1f2; margin: 0; text-align: center; color: #881337; line-height: 1.6; }
+        header { background: #db2777; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #db2777;
         }
-        body { font-family: 'Comic Sans MS', cursive, sans-serif; background: var(--bg-color); margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { background: linear-gradient(135deg, #0e6655 0%, #16a085 100%); width: 100%; color: white; text-align: center; padding: 40px 0; }
-        .card { background: white; width: 90%; max-width: 800px; margin: 30px; padding: 40px; border-radius: 50px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border: 4px solid var(--main-color); }
-        .next-btn { display: inline-block; background: var(--main-color); color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 8px 0 #0b5345; }
-        code { background: #f4f4f4; padding: 2px 5px; border-radius: 4px; color: #c0392b; }
+
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #db2777; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #9d174d;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
+        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #9d174d; }
+        
+        h2 { color: #9d174d; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .param-info { background: #fdf2f8; border-left: 5px solid #db2777; padding: 15px; border-radius: 8px; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Level 15: Encapsulation</h1>
-        <p>Keep your plant secrets safe from hackers!</p>
-    </header>
-    <div class="card">
-        <h2>Protecting Data 🔒</h2>
-        <p>In Python, if we put <b>two underscores</b> <code>__</code> before a variable name, it becomes <b>Private</b>. It's like putting your data inside a locked safe!</p>
+
+<header>
+    <h1>Level 15: Customizing Commands 🛠️</h1>
+</header>
+
+<div class="container">
+    <div class="lesson-card">
+        <h2>Parameters and Arguments</h2>
         
+        <p>In Level 14, we learned to save instructions in a function. But what if you want your function to do something slightly different each time? In Level 15, we introduce <b>Parameters</b>. At <b>Flora World Coding</b>, we think of parameters like empty slots in a machine. You build the machine once, but you can feed it different materials (Arguments) to get different results. This makes your code incredibly flexible and professional.</p>
+
         
 
-        <iframe src="https://trinket.io/embed/python/3c088bcf28f2" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>The technical difference is simple but important. A <b>Parameter</b> is the variable listed inside the parentheses in the function definition—it's the placeholder. An <b>Argument</b> is the actual value you send to the function when you call it. For example, in <code>def grow(plant_type):</code>, <i>plant_type</i> is the parameter. When you run <code>grow("Sunflower")</code>, <i>"Sunflower"</i> is the argument. This allows one single function to handle hundreds of different inputs without rewriting any logic.</p>
+
+        <p>Why does Google AdSense love this topic? Because it moves into "Advanced Logic." Understanding the flow of data into and out of functions is a core requirement for back-end development. Whether you're building a system that calculates taxes for different countries or a game character that takes different amounts of damage, parameters are the key. Mastery of this concept proves that your website provides high-level computer science education.</p>
         
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="level16.html" class="next-btn">Level 16: Polymorphism ➔</a>
+        <div class="param-info">
+            <b>Pro Tip:</b> You can have as many parameters as you want! Just separate them with commas, like: <code>def make_pizza(size, topping):</code>
         </div>
+
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/3c088bcf28f2" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Create a function called <code>calculate_area(length, width)</code>. It should multiply the two parameters and print the result. Call the function twice with different numbers to see how the same code solves two different math problems!</p>
+        
+        <a href="level16.html" class="next-btn">I'm a Parameter Pro! Go to Level 16 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level14.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 14</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
+
 </body>
 </html>

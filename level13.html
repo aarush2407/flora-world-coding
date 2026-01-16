@@ -2,75 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flora World - Level 13</title>
+    <title>Level 13: Python Dictionaries | Flora World Coding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-color: #8e44ad;   /* Royal Purple */
-            --accent-color: #f1c40f; /* Gold */
-            --bg-color: #f4f4f9;
+        body { font-family: 'Lexend', sans-serif; background: #fffaf5; margin: 0; text-align: center; color: #431407; line-height: 1.6; }
+        header { background: #ea580c; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
+        .lesson-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border: 4px solid #ea580c;
         }
 
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .trinket-wrapper { margin: 30px 0; border-radius: 15px; overflow: hidden; border: 2px solid #eee; }
+        
+        .next-btn { 
+            display: inline-block; 
+            background: #ea580c; 
+            color: white; 
+            padding: 18px 45px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            box-shadow: 0 6px 0 #9a3412;
+            transition: 0.2s;
+            text-align: center;
+            width: 80%;
+            margin: 20px 10%;
         }
-
-        header {
-            background: linear-gradient(135deg, #4b0082 0%, #8e44ad 100%);
-            height: 250px; width: 100%; color: white; text-align: center; padding-top: 40px; position: relative;
-        }
-
-        .brand-name { position: absolute; top: 20px; left: 30px; font-weight: bold; color: var(--accent-color); }
-
-        nav { margin-top: 20px; display: flex; justify-content: center; gap: 10px; z-index: 10; position: relative; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: white; background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 50px; font-size: 0.8rem; border: 1px solid white; }
-        nav a.active { background: var(--accent-color); color: #333; border: none; }
-
-        .card {
-            background: white; width: 90%; max-width: 850px; margin: -50px auto 50px auto; padding: 40px;
-            border-radius: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border: 10px solid #FFFFFF; outline: 4px solid var(--main-color);
-            position: relative; z-index: 20;
-        }
-
-        .next-btn {
-            display: inline-block; background: var(--main-color); color: white; padding: 20px 50px;
-            text-decoration: none; font-size: 1.5rem; border-radius: 60px; font-weight: bold;
-            box-shadow: 0 10px 0 #5e3370; transition: 0.2s;
-        }
+        .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #9a3412; }
+        
+        h2 { color: #9a3412; font-family: 'Fredoka One', cursive; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        .dictionary-box { background: #ffedd5; border: 2px solid #ea580c; padding: 20px; border-radius: 15px; font-family: monospace; font-size: 1.1rem; margin: 20px 0; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="brand-name">🌿 Flora World Coding</div>
-        <nav>
-            <a href="index.html">L1</a> ... <a href="level12.html">L12</a>
-            <a href="level13.html" class="active">L13</a>
-        </nav>
-        <h1>🏛️ Level 13: The Blueprint (Classes)</h1>
-        <p>Master the art of Object-Oriented Programming!</p>
-    </header>
+<header>
+    <h1>Level 13: Data Dictionaries 📖</h1>
+</header>
 
-    <div class="card">
-        <h2>What is a Class? 🏗️</h2>
-        <p>A <b>Class</b> is like a blueprint for a house. You can use one blueprint to build many houses! In coding, we use Classes to create "Objects" with their own properties.</p>
+<div class="container">
+    <div class="lesson-card">
+        <h2>Unlocking Data with Keys</h2>
+        
+        <p>In Level 11, we used lists to store items in order. But what if you want to store a piece of information and give it a specific name? In Level 13, we introduce **Dictionaries**. At **Flora World Coding**, we think of a dictionary like a real-life dictionary: you look up a "word" (the <b>Key</b>) to find its "definition" (the <b>Value</b>). This is the most efficient way to store related data, like a user's profile information or a character's stats in a game.</p>
 
         
 
-        <div style="border-radius: 30px; overflow: hidden; border: 4px solid #EEE; margin: 30px 0;">
-            <iframe src="https://trinket.io/embed/python/0dec6765dffe" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>Dictionaries use curly braces `{ }` and consist of pairs. Each pair has a key followed by a colon and then the value, like this: <code>"name": "Flora"</code>. Unlike lists, dictionaries don't use numbers to find items. Instead, you use the Key. If you have a dictionary called <code>player</code>, typing <code>player["health"]</code> will instantly give you the value stored under that key. This "mapping" makes your code much more readable and organized.</p>
+
+        <p>Dictionaries are used everywhere in the modern web. When an app like Spotify stores a song's title, artist, and duration, it uses a dictionary-like structure called JSON. By mastering dictionaries, you are learning how to handle structured data, which is a key requirement for getting approved by Google AdSense and becoming a professional software engineer. It allows you to create complex systems that feel intuitive and organized.</p>
+        
+        <div class="dictionary-box">
+            plant = {<br>
+            &nbsp;&nbsp;"type": "Sunflower",<br>
+            &nbsp;&nbsp;"height": 150,<br>
+            &nbsp;&nbsp;"health": "Happy"<br>
+            }
         </div>
 
-        <div style="text-align: center;">
-            <a href="level14.html" class="next-btn">Level 14: Inheritance ➔</a>
+        <div class="trinket-wrapper">
+            <iframe src="https://trinket.io/embed/python/0dec6765dffe" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
+        
+        <h2>Mastery Challenge</h2>
+        <p>Create a dictionary called <code>my_car</code>. Add keys for <code>brand</code>, <code>model</code>, and <code>year</code>. Use a <code>print()</code> statement to show only the <code>model</code> of the car. Then, try adding a new key-value pair for <code>color</code>!</p>
+        
+        <a href="level14.html" class="next-btn">I'm a Data Architect! Go to Level 14 ➔</a>
     </div>
+    
+    <p style="text-align: center;">
+        <a href="level12.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 12</a>
+        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    </p>
+</div>
 
 </body>
 </html>
