@@ -2,12 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Level 16: Return Values | Flora World Coding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 16: RETURN VALUES | FLORA WORLD CODING</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* 1. MAIN PAGE STYLES */
         body { font-family: 'Lexend', sans-serif; background: #ecfdf5; margin: 0; text-align: center; color: #064e3b; line-height: 1.6; }
-        header { background: #10b981; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
-        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        /* 2. THE NEW CURVY HEADER STYLES (CAPITALIZED) */
+        .flora-nav-container {
+            background: #0f172a; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lexend', sans-serif;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 30px; 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: #c5a059;
+            text-decoration: none;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links-group { display: flex; gap: 10px; }
+
+        .flora-link {
+            color: #3b82f6; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .flora-link:hover {
+            background: #c5a059;
+            color: #0f172a !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* 3. LESSON CONTENT STYLES (LEVEL 16 EMERALD THEME) */
+        header { background: #10b981; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; margin-top: 10px; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; text-transform: uppercase; }
         
         .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
         .lesson-card { 
@@ -33,51 +83,91 @@
             text-align: center;
             width: 80%;
             margin: 20px 10%;
+            text-transform: uppercase;
         }
         .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #047857; }
         
-        h2 { color: #047857; font-family: 'Fredoka One', cursive; }
+        h2 { color: #047857; font-family: 'Fredoka One', cursive; text-transform: uppercase; }
         p { margin-bottom: 20px; font-size: 1.1rem; }
         .return-tip { background: #d1fae5; border-left: 5px solid #10b981; padding: 15px; border-radius: 8px; margin: 20px 0; }
+
+        /* 4. THE NEW CURVY FOOTER STYLES (CAPITALIZED) */
+        .flora-footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 60px 20px;
+            border-radius: 60px 60px 0 0; 
+            margin-top: 80px;
+            border-top: 3px solid #c5a059;
+            text-align: center;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .footer-link:hover { color: #c5a059; }
     </style>
 </head>
 <body>
 
+<nav class="flora-nav-container">
+    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <div class="nav-links-group">
+        <a href="index.html" class="flora-link">HOME</a>
+        <a href="level1.html" class="flora-link">LEVELS</a>
+        <a href="privacy.html" class="flora-link">PRIVACY</a>
+    </div>
+</nav>
+
 <header>
-    <h1>Level 16: The Return Harvest 🧺</h1>
+    <h1>LEVEL 16: THE RETURN HARVEST 🧺</h1>
 </header>
 
 <div class="container">
     <div class="lesson-card">
-        <h2>Getting Results from Functions</h2>
+        <h2>GETTING RESULTS FROM FUNCTIONS</h2>
         
-        <p>Until now, our functions have been doing work and printing results directly to the screen. But in real-world programming, functions often need to calculate a value and "hand it back" to the main program to be used later. In Level 16, we introduce the <b>return</b> keyword. At <b>Flora World Coding</b>, we think of this like sending a robot into a garden to pick a fruit; the robot doesn't just eat the fruit there—it brings it back to you so you can use it in a recipe.</p>
+        <p>Until now, our functions have been doing work and printing results directly to the screen. But in real-world programming, functions often need to calculate a value and "hand it back" to the main program to be used later. In Level 16, we introduce the <b>RETURN</b> keyword. At <b>FLORA WORLD CODING</b>, we think of this like sending a robot into a garden to pick a fruit; the robot doesn't just eat the fruit there—it brings it back to you so you can use it in a recipe.</p>
 
         
 
-        <p>The <code>return</code> statement immediately ends the function and sends the specified value back to the line of code that called it. This is technically different from <code>print()</code>. While <code>print()</code> just shows a message to the human user, <code>return</code> allows you to save the function's output into a variable. For example, <code>my_result = calculate_score()</code> captures whatever the function produces so you can use it for math or logic later in your script.</p>
+        <p>The <code>RETURN</code> statement immediately ends the function and sends the specified value back to the line of code that called it. This is technically different from <code>PRINT()</code>. While <code>PRINT()</code> just shows a message to the human user, <code>RETURN</code> allows you to save the function's output into a variable. For example, <code>MY_RESULT = CALCULATE_SCORE()</code> captures whatever the function produces so you can use it for math or logic later in your script.</p>
 
         <p>Why is this a requirement for professional coding? Because it allows functions to be "pure" and modular. A function that returns a value can be used anywhere: in a web app, a mobile game, or a data analysis tool. It doesn't care how the result is shown; it only cares about calculating the right answer. Mastering return values is a massive step toward understanding how professional software handles complex data pipelines and API responses.</p>
         
         <div class="return-tip">
-            <b>Important Coding Note:</b> Once a function hits a <code>return</code> statement, it stops completely. Any code written <i>after</i> the return line inside the function will be ignored by Python!
+            <b>IMPORTANT CODING NOTE:</b> ONCE A FUNCTION HITS A <code>RETURN</code> STATEMENT, IT STOPS COMPLETELY. ANY CODE WRITTEN <i>AFTER</i> THE RETURN LINE INSIDE THE FUNCTION WILL BE IGNORED BY PYTHON!
         </div>
 
         <div class="trinket-wrapper">
             <iframe src="https://trinket.io/embed/python/4ee2ca6a4a13" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
         
-        <h2>Mastery Challenge</h2>
-        <p>Create a function called <code>multiply(a, b)</code> that <b>returns</b> the product of the two numbers. Outside the function, call it and store the result in a variable called <code>total</code>. Finally, print the <code>total</code> to see your returned value in action!</p>
+        <h2>MASTERY CHALLENGE</h2>
+        <p>CREATE A FUNCTION CALLED <code>MULTIPLY(A, B)</code> THAT <b>RETURNS</b> THE PRODUCT OF THE TWO NUMBERS. OUTSIDE THE FUNCTION, CALL IT AND STORE THE RESULT IN A VARIABLE CALLED <code>TOTAL</code>. FINALLY, PRINT THE <code>TOTAL</code> TO SEE YOUR RETURNED VALUE IN ACTION!</p>
         
-        <a href="level17.html" class="next-btn">I'm a Return Specialist! Go to Level 17 ➔</a>
+        <a href="level17.html" class="next-btn">I'M A RETURN SPECIALIST! GO TO LEVEL 17 ➔</a>
     </div>
     
-    <p style="text-align: center;">
-        <a href="level15.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 15</a>
-        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="level15.html" style="color: #888; text-decoration: none; margin-right: 20px; text-transform: uppercase; font-weight: 500;">← BACK TO LEVEL 15</a>
+        <a href="index.html" style="color: #888; text-decoration: none; text-transform: uppercase; font-weight: 500;">🏠 HOME</a>
     </p>
 </div>
+
+<footer class="flora-footer">
+    <h2 style="color: #c5a059; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">FLORA WORLD ACADEMY</h2>
+    <div>
+        <a href="index.html" class="footer-link">HOME</a>
+        <a href="privacy.html" class="footer-link">PRIVACY POLICY</a>
+        <a href="contact.html" class="footer-link">CONTACT US</a>
+    </div>
+    <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | WWW.FLORA-WORLD.COM</p>
+</footer>
 
 </body>
 </html>

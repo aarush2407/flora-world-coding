@@ -2,12 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Level 22: Class Inheritance | Flora World Coding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 22: CLASS INHERITANCE | FLORA WORLD CODING</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* 1. MAIN PAGE STYLES */
         body { font-family: 'Lexend', sans-serif; background: #f1f5f9; margin: 0; text-align: center; color: #0f172a; line-height: 1.6; }
-        header { background: #1e293b; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
-        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        /* 2. THE NEW CURVY HEADER STYLES (CAPITALIZED) */
+        .flora-nav-container {
+            background: #0f172a; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lexend', sans-serif;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 30px; 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: #c5a059;
+            text-decoration: none;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links-group { display: flex; gap: 10px; }
+
+        .flora-link {
+            color: #3b82f6; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .flora-link:hover {
+            background: #c5a059;
+            color: #0f172a !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* 3. LESSON CONTENT STYLES (LEVEL 22 SLATE THEME) */
+        header { background: #1e293b; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; margin-top: 10px; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; text-transform: uppercase; }
         
         .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
         .lesson-card { 
@@ -33,57 +83,97 @@
             text-align: center;
             width: 80%;
             margin: 20px 10%;
+            text-transform: uppercase;
         }
         .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #000000; }
         
-        h2 { color: #1e293b; font-family: 'Fredoka One', cursive; }
+        h2 { color: #1e293b; font-family: 'Fredoka One', cursive; text-transform: uppercase; }
         p { margin-bottom: 20px; font-size: 1.1rem; }
         .inheritance-tree { background: #e2e8f0; border: 2px solid #1e293b; padding: 20px; border-radius: 15px; margin: 20px 0; }
+
+        /* 4. THE NEW CURVY FOOTER STYLES (CAPITALIZED) */
+        .flora-footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 60px 20px;
+            border-radius: 60px 60px 0 0; 
+            margin-top: 80px;
+            border-top: 3px solid #c5a059;
+            text-align: center;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .footer-link:hover { color: #c5a059; }
     </style>
 </head>
 <body>
 
+<nav class="flora-nav-container">
+    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <div class="nav-links-group">
+        <a href="index.html" class="flora-link">HOME</a>
+        <a href="level1.html" class="flora-link">LEVELS</a>
+        <a href="privacy.html" class="flora-link">PRIVACY</a>
+    </div>
+</nav>
+
 <header>
-    <h1>Level 22: Family Trees of Code 🌳</h1>
+    <h1>LEVEL 22: FAMILY TREES OF CODE 🌳</h1>
 </header>
 
 <div class="container">
     <div class="lesson-card">
-        <h2>What is Inheritance?</h2>
+        <h2>WHAT IS INHERITANCE?</h2>
         
-        <p>In the previous level, we learned how to build blueprints called Classes. But what if you have two blueprints that are very similar? For example, a "Rose" and a "Sunflower" are both "Plants." In Level 22, we introduce <b>Inheritance</b>. At <b>Flora World Coding</b>, we use inheritance to let a new class take on all the attributes and methods of an existing class. This saves time and prevents us from writing the same code twice!</p>
+        <p>In the previous level, we learned how to build blueprints called Classes. But what if you have two blueprints that are very similar? For example, a "Rose" and a "Sunflower" are both "Plants." In Level 22, we introduce <b>INHERITANCE</b>. At <b>FLORA WORLD CODING</b>, we use inheritance to let a new class take on all the attributes and methods of an existing class. This saves time and prevents us from writing the same code twice!</p>
 
         
 
-        <p>The technical structure involves a <b>Parent Class</b> (the original) and a <b>Child Class</b> (the new one). When you define the child class, you put the parent class name in parentheses: <code>class Rose(Plant):</code>. This tells Python that a Rose is a specific "type" of Plant. The child class automatically inherits everything from the parent, but it can also have its own unique features or even "override" parent methods to do something differently.</p>
+        <p>The technical structure involves a <b>PARENT CLASS</b> (the original) and a <b>CHILD CLASS</b> (the new one). When you define the child class, you put the parent class name in parentheses: <code>CLASS ROSE(PLANT):</code>. This tells Python that a Rose is a specific "type" of Plant. The child class automatically inherits everything from the parent, but it can also have its own unique features or even "override" parent methods to do something differently.</p>
 
-        <p>Inheritance is a fundamental pillar of professional software development. It allows developers to create vast systems of related objects without making mistakes. Think of a game where all "Enemies" can move and attack, but a "BossEnemy" has extra health and special moves. By using inheritance, you create a cleaner, more organized codebase that is easier to maintain and update—skills that are essential for any AdSense-approved technical blog or academy.</p>
+        <p>Inheritance is a fundamental pillar of professional software development. It allows developers to create vast systems of related objects without making mistakes. Think of a game where all "Enemies" can move and attack, but a "BossEnemy" has extra health and special moves. By using inheritance, you create a cleaner, more organized codebase that is easier to maintain and update—skills that are essential for any ADSENSE-approved technical blog or academy.</p>
         
         <div class="inheritance-tree">
-            <b>The "Is-A" Relationship:</b>
+            <b>THE "IS-A" RELATIONSHIP:</b>
             <ul>
-                <li>A <b>Car</b> <i>is-a</i> <b>Vehicle</b></li>
-                <li>A <b>Dog</b> <i>is-a</i> <b>Animal</b></li>
-                <li>A <b>Sunflower</b> <i>is-a</i> <b>Plant</b></li>
+                <li>A <b>CAR</b> <i>IS-A</i> <b>VEHICLE</b></li>
+                <li>A <b>DOG</b> <i>IS-A</i> <b>ANIMAL</b></li>
+                <li>A <b>SUNFLOWER</b> <i>IS-A</i> <b>PLANT</b></li>
             </ul>
-            <p>If it fits the "Is-A" rule, it's a perfect candidate for Inheritance!</p>
+            <p>IF IT FITS THE "IS-A" RULE, IT'S A PERFECT CANDIDATE FOR INHERITANCE!</p>
         </div>
 
         <div class="trinket-wrapper">
             <iframe src="https://trinket.io/embed/python/ea4f82639e6f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
         
-        <h2>Mastery Challenge</h2>
-        <p>Create a Parent class called <code>Animal</code> with a method <code>speak()</code>. Then, create a Child class called <code>Dog</code> that inherits from Animal. Can you make the Dog say "Woof!" while the Animal says "Hello"?</p>
+        <h2>MASTERY CHALLENGE</h2>
+        <p>CREATE A PARENT CLASS CALLED <code>ANIMAL</code> WITH A METHOD <code>SPEAK()</code>. THEN, CREATE A CHILD CLASS CALLED <code>DOG</code> THAT INHERITS FROM ANIMAL. CAN YOU MAKE THE DOG SAY "WOOF!" WHILE THE ANIMAL SAYS "HELLO"?</p>
         
-        <a href="level23.html" class="next-btn">I'm an Inheritance Expert! Go to Level 23 ➔</a>
+        <a href="level23.html" class="next-btn">I'M AN INHERITANCE EXPERT! GO TO LEVEL 23 ➔</a>
     </div>
     
-    <p style="text-align: center;">
-        <a href="level21.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 21</a>
-        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="level21.html" style="color: #888; text-decoration: none; margin-right: 20px; text-transform: uppercase; font-weight: 500;">← BACK TO LEVEL 21</a>
+        <a href="index.html" style="color: #888; text-decoration: none; text-transform: uppercase; font-weight: 500;">🏠 HOME</a>
     </p>
 </div>
+
+<footer class="flora-footer">
+    <h2 style="color: #c5a059; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">FLORA WORLD ACADEMY</h2>
+    <div>
+        <a href="index.html" class="footer-link">HOME</a>
+        <a href="privacy.html" class="footer-link">PRIVACY POLICY</a>
+        <a href="contact.html" class="footer-link">CONTACT US</a>
+    </div>
+    <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | WWW.FLORA-WORLD.COM</p>
+</footer>
 
 </body>
 </html>

@@ -2,12 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Level 21: Classes & Objects | Flora World Coding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 21: CLASSES & OBJECTS | FLORA WORLD CODING</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* 1. MAIN PAGE STYLES */
         body { font-family: 'Lexend', sans-serif; background: #faf5ff; margin: 0; text-align: center; color: #3b0764; line-height: 1.6; }
-        header { background: #7c3aed; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
-        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        /* 2. THE NEW CURVY HEADER STYLES (CAPITALIZED) */
+        .flora-nav-container {
+            background: #0f172a; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lexend', sans-serif;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 30px; 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: #c5a059;
+            text-decoration: none;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links-group { display: flex; gap: 10px; }
+
+        .flora-link {
+            color: #3b82f6; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .flora-link:hover {
+            background: #c5a059;
+            color: #0f172a !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* 3. LESSON CONTENT STYLES (LEVEL 21 PURPLE THEME) */
+        header { background: #7c3aed; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; margin-top: 10px; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; text-transform: uppercase; }
         
         .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
         .lesson-card { 
@@ -33,39 +83,69 @@
             text-align: center;
             width: 80%;
             margin: 20px 10%;
+            text-transform: uppercase;
         }
         .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #5b21b6; }
         
-        h2 { color: #5b21b6; font-family: 'Fredoka One', cursive; }
+        h2 { color: #5b21b6; font-family: 'Fredoka One', cursive; text-transform: uppercase; }
         p { margin-bottom: 20px; font-size: 1.1rem; }
         .oop-box { background: #f5f3ff; border: 2px solid #7c3aed; padding: 20px; border-radius: 15px; margin: 20px 0; }
+
+        /* 4. THE NEW CURVY FOOTER STYLES (CAPITALIZED) */
+        .flora-footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 60px 20px;
+            border-radius: 60px 60px 0 0; 
+            margin-top: 80px;
+            border-top: 3px solid #c5a059;
+            text-align: center;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .footer-link:hover { color: #c5a059; }
     </style>
 </head>
 <body>
 
+<nav class="flora-nav-container">
+    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <div class="nav-links-group">
+        <a href="index.html" class="flora-link">HOME</a>
+        <a href="level1.html" class="flora-link">LEVELS</a>
+        <a href="privacy.html" class="flora-link">PRIVACY</a>
+    </div>
+</nav>
+
 <header>
-    <h1>Level 21: The Blueprint of Code 🏗️</h1>
+    <h1>LEVEL 21: THE BLUEPRINT OF CODE 🏗️</h1>
 </header>
 
 <div class="container">
     <div class="lesson-card">
-        <h2>What are Classes and Objects?</h2>
+        <h2>WHAT ARE CLASSES AND OBJECTS?</h2>
         
-        <p>Until now, our data and our functions have lived in separate worlds. But in the real world, things have both <b>properties</b> (data) and <b>actions</b> (functions). In Level 21, we introduce **Classes**. At **Flora World Coding**, we think of a Class as a "blueprint." If you want to create a garden full of thousands of different flowers, you don't write code for each one. You create a "Flower" blueprint (Class) and then sprout as many individual "Flowers" (Objects) as you need.</p>
+        <p>Until now, our data and our functions have lived in separate worlds. But in the real world, things have both <b>PROPERTIES</b> (data) and <b>ACTIONS</b> (functions). In Level 21, we introduce **CLASSES**. At **FLORA WORLD CODING**, we think of a Class as a "blueprint." If you want to create a garden full of thousands of different flowers, you don't write code for each one. You create a "Flower" blueprint (Class) and then sprout as many individual "Flowers" (Objects) as you need.</p>
 
         
 
-        <p>Technically, a Class is a way to bundle data and functionality together. We use the <code>class</code> keyword followed by a name. Inside, we use a special function called <code>__init__</code> to set up the initial properties of our object. We also use the <code>self</code> keyword, which is a reference to the specific object we are currently working on. This allows Python to keep track of which "Flower" is currently blooming or being watered within a massive list of objects.</p>
+        <p>Technically, a Class is a way to bundle data and functionality together. We use the <code>CLASS</code> keyword followed by a name. Inside, we use a special function called <code>__INIT__</code> to set up the initial properties of our object. We also use the <code>SELF</code> keyword, which is a reference to the specific object we are currently working on. This allows Python to keep track of which "Flower" is currently blooming or being watered within a massive list of objects.</p>
 
-        <p>Why is Object-Oriented Programming (OOP) the gold standard for AdSense-ready content? Because it is how almost all professional software is built today. From the characters in a video game to the windows in your web browser, everything is an "Object." Mastering classes shows that you understand how to organize complex systems into manageable, reusable parts. This is the skill that separates junior coders from senior software architects.</p>
+        <p>Why is Object-Oriented Programming (OOP) the gold standard for ADSENSE-ready content? Because it is how almost all professional software is built today. From the characters in a video game to the windows in your web browser, everything is an "Object." Mastering classes shows that you understand how to organize complex systems into manageable, reusable parts. This is the skill that separates junior coders from senior software architects.</p>
         
         <div class="oop-box">
-            <b>The OOP Vocabulary:</b>
+            <b>THE OOP VOCABULARY:</b>
             <ul>
-                <li><b>Class:</b> The blueprint (e.g., the idea of a "Plant").</li>
-                <li><b>Object:</b> The actual thing created from the blueprint (e.g., "Sunflower").</li>
-                <li><b>Attribute:</b> A piece of data inside the object (e.g., <code>color = "Yellow"</code>).</li>
-                <li><b>Method:</b> A function that belongs to the object (e.g., <code>bloom()</code>).</li>
+                <li><b>CLASS:</b> THE BLUEPRINT (E.G., THE IDEA OF A "PLANT").</li>
+                <li><b>OBJECT:</b> THE ACTUAL THING CREATED FROM THE BLUEPRINT (E.G., "SUNFLOWER").</li>
+                <li><b>ATTRIBUTE:</b> A PIECE OF DATA INSIDE THE OBJECT (E.G., <code>COLOR = "YELLOW"</code>).</li>
+                <li><b>METHOD:</b> A FUNCTION THAT BELONGS TO THE OBJECT (E.G., <code>BLOOM()</code>).</li>
             </ul>
         </div>
 
@@ -73,17 +153,27 @@
             <iframe src="https://trinket.io/embed/python/024f24c5ec94" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
         
-        <h2>Mastery Challenge</h2>
-        <p>Create a class called <code>Car</code> with attributes for <code>brand</code> and <code>color</code>. Then, create two different objects (cars) from that blueprint and print their unique details. Can you change the color of just one car without affecting the other?</p>
+        <h2>MASTERY CHALLENGE</h2>
+        <p>CREATE A CLASS CALLED <code>CAR</code> WITH ATTRIBUTES FOR <code>BRAND</code> AND <code>COLOR</code>. THEN, CREATE TWO DIFFERENT OBJECTS (CARS) FROM THAT BLUEPRINT AND PRINT THEIR UNIQUE DETAILS. CAN YOU CHANGE THE COLOR OF JUST ONE CAR WITHOUT AFFECTING THE OTHER?</p>
         
-        <a href="level22.html" class="next-btn">I'm an Object Architect! Go to Level 22 ➔</a>
+        <a href="level22.html" class="next-btn">I'M AN OBJECT ARCHITECT! GO TO LEVEL 22 ➔</a>
     </div>
     
-    <p style="text-align: center;">
-        <a href="level20.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 20</a>
-        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="level20.html" style="color: #888; text-decoration: none; margin-right: 20px; text-transform: uppercase; font-weight: 500;">← BACK TO LEVEL 20</a>
+        <a href="index.html" style="color: #888; text-decoration: none; text-transform: uppercase; font-weight: 500;">🏠 HOME</a>
     </p>
 </div>
+
+<footer class="flora-footer">
+    <h2 style="color: #c5a059; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">FLORA WORLD ACADEMY</h2>
+    <div>
+        <a href="index.html" class="footer-link">HOME</a>
+        <a href="privacy.html" class="footer-link">PRIVACY POLICY</a>
+        <a href="contact.html" class="footer-link">CONTACT US</a>
+    </div>
+    <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | WWW.FLORA-WORLD.COM</p>
+</footer>
 
 </body>
 </html>

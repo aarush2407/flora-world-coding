@@ -2,12 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Level 24: List Comprehensions | Flora World Coding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 24: LIST COMPREHENSIONS | FLORA WORLD CODING</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* 1. MAIN PAGE STYLES */
         body { font-family: 'Lexend', sans-serif; background: #0f172a; margin: 0; text-align: center; color: #f1f5f9; line-height: 1.6; }
-        header { background: #111827; color: #2dd4bf; padding: 40px 20px; border-bottom: 4px solid #2dd4bf; }
-        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        /* 2. THE NAV BAR STYLES */
+        .flora-nav-container {
+            background: #1e293b; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lexend', sans-serif;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 30px; 
+            border: 1px solid rgba(45, 212, 191, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .logo-text {
+            color: #2dd4bf;
+            text-decoration: none;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links-group { display: flex; gap: 10px; }
+
+        .flora-link {
+            color: #3b82f6; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .flora-link:hover {
+            background: #2dd4bf;
+            color: #0f172a !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(45, 212, 191, 0.4);
+        }
+
+        /* 3. LESSON CONTENT STYLES (LEVEL 24 CYBER THEME) */
+        header { background: #111827; color: #2dd4bf; padding: 40px 20px; border-bottom: 4px solid #2dd4bf; margin-top: 10px; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; text-transform: uppercase; }
         
         .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
         .lesson-card { 
@@ -33,38 +83,68 @@
             text-align: center;
             width: 80%;
             margin: 20px 10%;
+            text-transform: uppercase;
         }
         .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #14b8a6; }
         
-        h2 { color: #2dd4bf; font-family: 'Fredoka One', cursive; }
+        h2 { color: #2dd4bf; font-family: 'Fredoka One', cursive; text-transform: uppercase; }
         p { margin-bottom: 20px; font-size: 1.1rem; color: #cbd5e1; }
         .syntax-box { background: #0f172a; border: 1px solid #2dd4bf; padding: 20px; border-radius: 15px; font-family: monospace; color: #5eead4; margin: 20px 0; }
+
+        /* 4. FOOTER STYLES */
+        .flora-footer {
+            background: #111827;
+            color: #94a3b8;
+            padding: 60px 20px;
+            border-radius: 60px 60px 0 0; 
+            margin-top: 80px;
+            border-top: 3px solid #2dd4bf;
+            text-align: center;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .footer-link:hover { color: #2dd4bf; }
     </style>
 </head>
 <body>
 
+<nav class="flora-nav-container">
+    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <div class="nav-links-group">
+        <a href="index.html" class="flora-link">HOME</a>
+        <a href="level1.html" class="flora-link">LEVELS</a>
+        <a href="privacy.html" class="flora-link">PRIVACY</a>
+    </div>
+</nav>
+
 <header>
-    <h1>Level 24: Code Compression ⚡</h1>
+    <h1>LEVEL 24: CODE COMPRESSION ⚡</h1>
 </header>
 
 <div class="container">
     <div class="lesson-card">
-        <h2>Writing Pythonic Code</h2>
+        <h2>WRITING PYTHONIC CODE</h2>
         
-        <p>You’ve learned how to use loops to create lists, but as you become an expert, you’ll want your code to be faster to write and easier to read. In Level 24, we introduce <b>List Comprehensions</b>. At <b>Flora World Coding</b>, we call this the "Shortcut to Data." It allows you to transform one list into another in just one line, replacing four or five lines of traditional <code>for</code> loop code.</p>
+        <p>You’ve learned how to use loops to create lists, but as you become an expert, you’ll want your code to be faster to write and easier to read. In Level 24, we introduce <b>LIST COMPREHENSIONS</b>. At <b>FLORA WORLD CODING</b>, we call this the "Shortcut to Data." It allows you to transform one list into another in just one line, replacing four or five lines of traditional <code>FOR</code> loop code.</p>
 
         
 
         <p>The technical syntax of a list comprehension follows a specific pattern: <code>[expression for item in list if condition]</code>. You are essentially telling Python: "Give me this result, for every item in this group, but only if it meets this rule." This is not just about typing less; it is actually faster for the computer to process. This efficiency is why List Comprehensions are one of the most beloved features of the Python language.</p>
 
-        <p>Why is this important for your graduation? Professional developers use comprehensions to filter large datasets instantly—like picking out every plant in a database that needs water. By mastering this, you move from writing "basic" scripts to writing "Pythonic" code. This term refers to code that uses the unique strengths of Python to be as clean and efficient as possible—a huge plus for any technical portfolio or AdSense-reviewed educational site.</p>
+        <p>Why is this important for your graduation? Professional developers use comprehensions to filter large datasets instantly—like picking out every plant in a database that needs water. By mastering this, you move from writing "basic" scripts to writing "Pythonic" code. This term refers to code that uses the unique strengths of Python to be as clean and efficient as possible—a huge plus for any technical portfolio or ADSENSE-reviewed educational site.</p>
         
         <div class="syntax-box">
-            # The Old Way:<br>
+            # THE OLD WAY:<br>
             new_list = []<br>
             for x in range(10):<br>
             &nbsp;&nbsp;&nbsp;&nbsp;new_list.append(x * 2)<br><br>
-            # The Pythonic Way:<br>
+            # THE PYTHONIC WAY:<br>
             new_list = [x * 2 for x in range(10)]
         </div>
 
@@ -72,17 +152,27 @@
             <iframe src="https://trinket.io/embed/python/c479e11baeb6" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
         
-        <h2>Mastery Challenge</h2>
-        <p>Create a list of numbers from 1 to 10. Use a <b>List Comprehension</b> to create a new list that contains only the <i>even</i> numbers from the first list. Hint: Use <code>if x % 2 == 0</code> at the end of your comprehension!</p>
+        <h2>MASTERY CHALLENGE</h2>
+        <p>CREATE A LIST OF NUMBERS FROM 1 TO 10. USE A <b>LIST COMPREHENSION</b> TO CREATE A NEW LIST THAT CONTAINS ONLY THE <i>EVEN</i> NUMBERS FROM THE FIRST LIST. HINT: USE <code>IF X % 2 == 0</code> AT THE END OF YOUR COMPREHENSION!</p>
         
-        <a href="level25.html" class="next-btn">I'm Ready for Graduation! Go to Level 25 ➔</a>
+        <a href="level25.html" class="next-btn">I'M READY FOR GRADUATION! GO TO LEVEL 25 ➔</a>
     </div>
     
-    <p style="text-align: center;">
-        <a href="level23.html" style="color: #64748b; text-decoration: none; margin-right: 20px;">← Back to Level 23</a>
-        <a href="index.html" style="color: #64748b; text-decoration: none;">🏠 Home</a>
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="level23.html" style="color: #64748b; text-decoration: none; margin-right: 20px; text-transform: uppercase; font-weight: 500;">← BACK TO LEVEL 23</a>
+        <a href="index.html" style="color: #64748b; text-decoration: none; text-transform: uppercase; font-weight: 500;">🏠 HOME</a>
     </p>
 </div>
+
+<footer class="flora-footer">
+    <h2 style="color: #2dd4bf; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">FLORA WORLD ACADEMY</h2>
+    <div>
+        <a href="index.html" class="footer-link">HOME</a>
+        <a href="privacy.html" class="footer-link">PRIVACY POLICY</a>
+        <a href="contact.html" class="footer-link">CONTACT US</a>
+    </div>
+    <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | WWW.FLORA-WORLD.COM</p>
+</footer>
 
 </body>
 </html>

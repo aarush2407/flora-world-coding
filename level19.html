@@ -2,12 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Level 19: Error Handling | Flora World Coding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 19: ERROR HANDLING | FLORA WORLD CODING</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* 1. MAIN PAGE STYLES */
         body { font-family: 'Lexend', sans-serif; background: #fffcf0; margin: 0; text-align: center; color: #451a03; line-height: 1.6; }
-        header { background: #f59e0b; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
-        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        /* 2. THE NEW CURVY HEADER STYLES (CAPITALIZED) */
+        .flora-nav-container {
+            background: #0f172a; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lexend', sans-serif;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 30px; 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: #c5a059;
+            text-decoration: none;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links-group { display: flex; gap: 10px; }
+
+        .flora-link {
+            color: #3b82f6; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .flora-link:hover {
+            background: #c5a059;
+            color: #0f172a !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* 3. LESSON CONTENT STYLES (LEVEL 19 AMBER THEME) */
+        header { background: #f59e0b; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; margin-top: 10px; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; text-transform: uppercase; }
         
         .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
         .lesson-card { 
@@ -33,34 +83,64 @@
             text-align: center;
             width: 80%;
             margin: 20px 10%;
+            text-transform: uppercase;
         }
         .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #b45309; }
         
-        h2 { color: #b45309; font-family: 'Fredoka One', cursive; }
+        h2 { color: #b45309; font-family: 'Fredoka One', cursive; text-transform: uppercase; }
         p { margin-bottom: 20px; font-size: 1.1rem; }
         .error-card { background: #fef3c7; border-left: 5px solid #f59e0b; padding: 15px; border-radius: 8px; margin: 20px 0; }
+
+        /* 4. THE NEW CURVY FOOTER STYLES (CAPITALIZED) */
+        .flora-footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 60px 20px;
+            border-radius: 60px 60px 0 0; 
+            margin-top: 80px;
+            border-top: 3px solid #c5a059;
+            text-align: center;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .footer-link:hover { color: #c5a059; }
     </style>
 </head>
 <body>
 
+<nav class="flora-nav-container">
+    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <div class="nav-links-group">
+        <a href="index.html" class="flora-link">HOME</a>
+        <a href="level1.html" class="flora-link">LEVELS</a>
+        <a href="privacy.html" class="flora-link">PRIVACY</a>
+    </div>
+</nav>
+
 <header>
-    <h1>Level 19: Catching the Bugs 🛡️</h1>
+    <h1>LEVEL 19: CATCHING THE BUGS 🛡️</h1>
 </header>
 
 <div class="container">
     <div class="lesson-card">
-        <h2>Building Crash-Proof Code</h2>
+        <h2>BUILDING CRASH-PROOF CODE</h2>
         
-        <p>Even the best programmers in the world write code that sometimes fails. Maybe a user types a word when the computer expected a number, or maybe a file is missing. In Level 19, we learn about <b>Error Handling</b>. At <b>Flora World Coding</b>, we don't want our programs to just "quit" when something goes wrong. We want them to handle the situation gracefully, give the user a helpful message, and keep on running.</p>
+        <p>Even the best programmers in the world write code that sometimes fails. Maybe a user types a word when the computer expected a number, or maybe a file is missing. In Level 19, we learn about <b>ERROR HANDLING</b>. At <b>FLORA WORLD CODING</b>, we don't want our programs to just "quit" when something goes wrong. We want them to handle the situation gracefully, give the user a helpful message, and keep on running.</p>
 
         
 
-        <p>To do this, Python uses a <code>try</code> and <code>except</code> block. You put the code you're "worried" about inside the <code>try</code> section. If an error occurs, Python immediately jumps to the <code>except</code> section instead of crashing. This is technically known as <b>Exception Handling</b>. It allows you to anticipate common issues, such as a <i>ValueError</i> (wrong data type) or a <i>ZeroDivisionError</i>, and provide a backup plan for the computer to follow.</p>
+        <p>To do this, Python uses a <code>TRY</code> and <code>EXCEPT</code> block. You put the code you're "worried" about inside the <code>TRY</code> section. If an error occurs, Python immediately jumps to the <code>EXCEPT</code> section instead of crashing. This is technically known as <b>EXCEPTION HANDLING</b>. It allows you to anticipate common issues, such as a <i>VALUEERROR</i> (wrong data type) or a <i>ZERODIVISIONERROR</i>, and provide a backup plan for the computer to follow.</p>
 
-        <p>Why is this critical for professional software? Imagine if your banking app crashed every time you made a typo—you wouldn't trust it! Professional software is built to be "Robust." By mastering error handling, you are ensuring your applications provide a smooth user experience even when things get messy. This attention to detail is exactly what AdSense and industry recruiters look for: it proves you are building software that is ready for the real world.</p>
+        <p>Why is this critical for professional software? Imagine if your banking app crashed every time you made a typo—you wouldn't trust it! Professional software is built to be "Robust." By mastering error handling, you are ensuring your applications provide a smooth user experience even when things get messy. This attention to detail is exactly what ADSENSE and industry recruiters look for: it proves you are building software that is ready for the real world.</p>
         
         <div class="error-card">
-            <b>The Try-Except Structure:</b>
+            <b>THE TRY-EXCEPT STRUCTURE:</b>
             <pre>
 try:
     number = int(input("Enter a number: "))
@@ -73,17 +153,27 @@ except:
             <iframe src="https://trinket.io/embed/python/6ca4526161a9" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
         
-        <h2>Mastery Challenge</h2>
-        <p>Write a program that asks the user for two numbers and divides them. Wrap the math in a <code>try</code> block. Use <code>except</code> to catch what happens if the user tries to divide by zero or enters a string instead of a number!</p>
+        <h2>MASTERY CHALLENGE</h2>
+        <p>WRITE A PROGRAM THAT ASKS THE USER FOR TWO NUMBERS AND DIVIDES THEM. WRAP THE MATH IN A <code>TRY</code> BLOCK. USE <code>EXCEPT</code> TO CATCH WHAT HAPPENS IF THE USER TRIES TO DIVIDE BY ZERO OR ENTERS A STRING INSTEAD OF A NUMBER!</p>
         
-        <a href="level20.html" class="next-btn">I'm a Bug Hunter! Go to Level 20 ➔</a>
+        <a href="level20.html" class="next-btn">I'M A BUG HUNTER! GO TO LEVEL 20 ➔</a>
     </div>
     
-    <p style="text-align: center;">
-        <a href="level18.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 18</a>
-        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="level18.html" style="color: #888; text-decoration: none; margin-right: 20px; text-transform: uppercase; font-weight: 500;">← BACK TO LEVEL 18</a>
+        <a href="index.html" style="color: #888; text-decoration: none; text-transform: uppercase; font-weight: 500;">🏠 HOME</a>
     </p>
 </div>
+
+<footer class="flora-footer">
+    <h2 style="color: #c5a059; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">FLORA WORLD ACADEMY</h2>
+    <div>
+        <a href="index.html" class="footer-link">HOME</a>
+        <a href="privacy.html" class="footer-link">PRIVACY POLICY</a>
+        <a href="contact.html" class="footer-link">CONTACT US</a>
+    </div>
+    <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | WWW.FLORA-WORLD.COM</p>
+</footer>
 
 </body>
 </html>

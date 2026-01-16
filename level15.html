@@ -2,12 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Level 15: Function Parameters | Flora World Coding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 15: FUNCTION PARAMETERS | FLORA WORLD CODING</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* 1. MAIN PAGE STYLES */
         body { font-family: 'Lexend', sans-serif; background: #fff1f2; margin: 0; text-align: center; color: #881337; line-height: 1.6; }
-        header { background: #db2777; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
-        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        /* 2. THE NEW CURVY HEADER STYLES (CAPITALIZED) */
+        .flora-nav-container {
+            background: #0f172a; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lexend', sans-serif;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 30px; 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: #c5a059;
+            text-decoration: none;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links-group { display: flex; gap: 10px; }
+
+        .flora-link {
+            color: #3b82f6; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .flora-link:hover {
+            background: #c5a059;
+            color: #0f172a !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* 3. LESSON CONTENT STYLES (LEVEL 15 PINK THEME) */
+        header { background: #db2777; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; margin-top: 10px; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; text-transform: uppercase; }
         
         .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
         .lesson-card { 
@@ -33,51 +83,91 @@
             text-align: center;
             width: 80%;
             margin: 20px 10%;
+            text-transform: uppercase;
         }
         .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #9d174d; }
         
-        h2 { color: #9d174d; font-family: 'Fredoka One', cursive; }
+        h2 { color: #9d174d; font-family: 'Fredoka One', cursive; text-transform: uppercase; }
         p { margin-bottom: 20px; font-size: 1.1rem; }
         .param-info { background: #fdf2f8; border-left: 5px solid #db2777; padding: 15px; border-radius: 8px; margin: 20px 0; }
+
+        /* 4. THE NEW CURVY FOOTER STYLES (CAPITALIZED) */
+        .flora-footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 60px 20px;
+            border-radius: 60px 60px 0 0; 
+            margin-top: 80px;
+            border-top: 3px solid #c5a059;
+            text-align: center;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .footer-link:hover { color: #c5a059; }
     </style>
 </head>
 <body>
 
+<nav class="flora-nav-container">
+    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <div class="nav-links-group">
+        <a href="index.html" class="flora-link">HOME</a>
+        <a href="level1.html" class="flora-link">LEVELS</a>
+        <a href="privacy.html" class="flora-link">PRIVACY</a>
+    </div>
+</nav>
+
 <header>
-    <h1>Level 15: Customizing Commands 🛠️</h1>
+    <h1>LEVEL 15: CUSTOMIZING COMMANDS 🛠️</h1>
 </header>
 
 <div class="container">
     <div class="lesson-card">
-        <h2>Parameters and Arguments</h2>
+        <h2>PARAMETERS AND ARGUMENTS</h2>
         
-        <p>In Level 14, we learned to save instructions in a function. But what if you want your function to do something slightly different each time? In Level 15, we introduce <b>Parameters</b>. At <b>Flora World Coding</b>, we think of parameters like empty slots in a machine. You build the machine once, but you can feed it different materials (Arguments) to get different results. This makes your code incredibly flexible and professional.</p>
+        <p>In Level 14, we learned to save instructions in a function. But what if you want your function to do something slightly different each time? In Level 15, we introduce <b>PARAMETERS</b>. At <b>FLORA WORLD CODING</b>, we think of parameters like empty slots in a machine. You build the machine once, but you can feed it different materials (ARGUMENTS) to get different results. This makes your code incredibly flexible and professional.</p>
 
         
 
-        <p>The technical difference is simple but important. A <b>Parameter</b> is the variable listed inside the parentheses in the function definition—it's the placeholder. An <b>Argument</b> is the actual value you send to the function when you call it. For example, in <code>def grow(plant_type):</code>, <i>plant_type</i> is the parameter. When you run <code>grow("Sunflower")</code>, <i>"Sunflower"</i> is the argument. This allows one single function to handle hundreds of different inputs without rewriting any logic.</p>
+        <p>The technical difference is simple but important. A <b>PARAMETER</b> is the variable listed inside the parentheses in the function definition—it's the placeholder. An <b>ARGUMENT</b> is the actual value you send to the function when you call it. For example, in <code>DEF GROW(PLANT_TYPE):</code>, <i>PLANT_TYPE</i> is the parameter. When you run <code>GROW("SUNFLOWER")</code>, <i>"SUNFLOWER"</i> is the argument. This allows one single function to handle hundreds of different inputs without rewriting any logic.</p>
 
         <p>Why does Google AdSense love this topic? Because it moves into "Advanced Logic." Understanding the flow of data into and out of functions is a core requirement for back-end development. Whether you're building a system that calculates taxes for different countries or a game character that takes different amounts of damage, parameters are the key. Mastery of this concept proves that your website provides high-level computer science education.</p>
         
         <div class="param-info">
-            <b>Pro Tip:</b> You can have as many parameters as you want! Just separate them with commas, like: <code>def make_pizza(size, topping):</code>
+            <b>PRO TIP:</b> YOU CAN HAVE AS MANY PARAMETERS AS YOU WANT! JUST SEPARATE THEM WITH COMMAS, LIKE: <code>DEF MAKE_PIZZA(SIZE, TOPPING):</code>
         </div>
 
         <div class="trinket-wrapper">
             <iframe src="https://trinket.io/embed/python/3c088bcf28f2" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
         
-        <h2>Mastery Challenge</h2>
-        <p>Create a function called <code>calculate_area(length, width)</code>. It should multiply the two parameters and print the result. Call the function twice with different numbers to see how the same code solves two different math problems!</p>
+        <h2>MASTERY CHALLENGE</h2>
+        <p>CREATE A FUNCTION CALLED <code>CALCULATE_AREA(LENGTH, WIDTH)</code>. IT SHOULD MULTIPLY THE TWO PARAMETERS AND PRINT THE RESULT. CALL THE FUNCTION TWICE WITH DIFFERENT NUMBERS TO SEE HOW THE SAME CODE SOLVES TWO DIFFERENT MATH PROBLEMS!</p>
         
-        <a href="level16.html" class="next-btn">I'm a Parameter Pro! Go to Level 16 ➔</a>
+        <a href="level16.html" class="next-btn">I'M A PARAMETER PRO! GO TO LEVEL 16 ➔</a>
     </div>
     
-    <p style="text-align: center;">
-        <a href="level14.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 14</a>
-        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="level14.html" style="color: #888; text-decoration: none; margin-right: 20px; text-transform: uppercase; font-weight: 500;">← BACK TO LEVEL 14</a>
+        <a href="index.html" style="color: #888; text-decoration: none; text-transform: uppercase; font-weight: 500;">🏠 HOME</a>
     </p>
 </div>
+
+<footer class="flora-footer">
+    <h2 style="color: #c5a059; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">FLORA WORLD ACADEMY</h2>
+    <div>
+        <a href="index.html" class="footer-link">HOME</a>
+        <a href="privacy.html" class="footer-link">PRIVACY POLICY</a>
+        <a href="contact.html" class="footer-link">CONTACT US</a>
+    </div>
+    <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | WWW.FLORA-WORLD.COM</p>
+</footer>
 
 </body>
 </html>

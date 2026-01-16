@@ -2,12 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Level 18: Python Modules & Randomness | Flora World Coding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL 18: PYTHON MODULES & RANDOMNESS | FLORA WORLD CODING</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* 1. MAIN PAGE STYLES */
         body { font-family: 'Lexend', sans-serif; background: #fdf2f8; margin: 0; text-align: center; color: #500724; line-height: 1.6; }
-        header { background: #d946ef; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
-        h1 { font-family: 'Fredoka One', cursive; margin: 0; }
+        
+        /* 2. THE NEW CURVY HEADER STYLES (CAPITALIZED) */
+        .flora-nav-container {
+            background: #0f172a; 
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Lexend', sans-serif;
+            margin: 15px auto;
+            max-width: 95%;
+            border-radius: 30px; 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: #c5a059;
+            text-decoration: none;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .nav-links-group { display: flex; gap: 10px; }
+
+        .flora-link {
+            color: #3b82f6; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .flora-link:hover {
+            background: #c5a059;
+            color: #0f172a !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* 3. LESSON CONTENT STYLES (LEVEL 18 PURPLE THEME) */
+        header { background: #d946ef; color: white; padding: 40px 20px; border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; margin-top: 10px; }
+        h1 { font-family: 'Fredoka One', cursive; margin: 0; text-transform: uppercase; }
         
         .container { max-width: 850px; margin: 40px auto; padding: 20px; text-align: left; }
         .lesson-card { 
@@ -33,38 +83,68 @@
             text-align: center;
             width: 80%;
             margin: 20px 10%;
+            text-transform: uppercase;
         }
         .next-btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #a21caf; }
         
-        h2 { color: #a21caf; font-family: 'Fredoka One', cursive; }
+        h2 { color: #a21caf; font-family: 'Fredoka One', cursive; text-transform: uppercase; }
         p { margin-bottom: 20px; font-size: 1.1rem; }
         .module-note { background: #fae8ff; border: 2px dashed #d946ef; padding: 20px; border-radius: 15px; margin: 20px 0; }
+
+        /* 4. THE NEW CURVY FOOTER STYLES (CAPITALIZED) */
+        .flora-footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 60px 20px;
+            border-radius: 60px 60px 0 0; 
+            margin-top: 80px;
+            border-top: 3px solid #c5a059;
+            text-align: center;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .footer-link:hover { color: #c5a059; }
     </style>
 </head>
 <body>
 
+<nav class="flora-nav-container">
+    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <div class="nav-links-group">
+        <a href="index.html" class="flora-link">HOME</a>
+        <a href="level1.html" class="flora-link">LEVELS</a>
+        <a href="privacy.html" class="flora-link">PRIVACY</a>
+    </div>
+</nav>
+
 <header>
-    <h1>Level 18: The Power of Modules 📦</h1>
+    <h1>LEVEL 18: THE POWER OF MODULES 📦</h1>
 </header>
 
 <div class="container">
     <div class="lesson-card">
-        <h2>Standing on the Shoulders of Giants</h2>
+        <h2>STANDING ON THE SHOULDERS OF GIANTS</h2>
         
-        <p>One of the best things about Python is that you don't have to write everything from scratch. In Level 18, we introduce <b>Modules</b>. A module is a file containing Python code that someone else wrote for you to use. At <b>Flora World Coding</b>, we use the <code>import</code> command to unlock these "expansion packs." It's like going to a library and checking out a book of pre-written magic spells so you can focus on building your world.</p>
+        <p>One of the best things about Python is that you don't have to write everything from scratch. In Level 18, we introduce <b>MODULES</b>. A module is a file containing Python code that someone else wrote for you to use. At <b>FLORA WORLD CODING</b>, we use the <code>IMPORT</code> command to unlock these "expansion packs." It's like going to a library and checking out a book of pre-written magic spells so you can focus on building your world.</p>
 
         
 
-        <p>In this lesson, we focus on the <code>random</code> module. By using <code>import random</code>, you give your program the ability to generate random numbers, pick items from a list by chance, or shuffle data. The technical term for this is <b>Pseudorandomness</b>. Using the <code>random.randint(1, 10)</code> function, for example, tells Python to roll a virtual 10-sided die and give you the result. This is the foundation of probability in computer science.</p>
+        <p>In this lesson, we focus on the <code>RANDOM</code> module. By using <code>IMPORT RANDOM</code>, you give your program the ability to generate random numbers, pick items from a list by chance, or shuffle data. The technical term for this is <b>PSEUDORANDOMNESS</b>. Using the <code>RANDOM.RANDINT(1, 10)</code> function, for example, tells Python to roll a virtual 10-sided die and give you the result. This is the foundation of probability in computer science.</p>
 
-        <p>Why is this vital for an AdSense-approved curriculum? Because randomness is everywhere in software! From generating secure passwords to determining if a rare plant spawns in <b>Flora World</b>, modules provide the tools. Mastering the <code>import</code> statement is the first step toward using professional libraries like <i>NumPy</i> for data science or <i>Pygame</i> for game development. It teaches you how to integrate external tools into your own projects.</p>
+        <p>Why is this vital for an ADSENSE-approved curriculum? Because randomness is everywhere in software! From generating secure passwords to determining if a rare plant spawns in <b>FLORA WORLD</b>, modules provide the tools. Mastering the <code>IMPORT</code> statement is the first step toward using professional libraries like <i>NUMPY</i> for data science or <i>PYGAME</i> for game development. It teaches you how to integrate external tools into your own projects.</p>
         
         <div class="module-note">
-            <b>Common Random Tools:</b>
+            <b>COMMON RANDOM TOOLS:</b>
             <ul>
-                <li><code>random.randint(a, b)</code>: Returns a whole number between a and b.</li>
-                <li><code>random.choice(my_list)</code>: Picks a random item from a list.</li>
-                <li><code>random.shuffle(my_list)</code>: Mixes up the order of a list.</li>
+                <li><code>RANDOM.RANDINT(A, B)</code>: RETURNS A WHOLE NUMBER BETWEEN A AND B.</li>
+                <li><code>RANDOM.CHOICE(MY_LIST)</code>: PICKS A RANDOM ITEM FROM A LIST.</li>
+                <li><code>RANDOM.SHUFFLE(MY_LIST)</code>: MIXES UP THE ORDER OF A LIST.</li>
             </ul>
         </div>
 
@@ -72,17 +152,27 @@
             <iframe src="https://trinket.io/embed/python/0d071cba38d0" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </div>
         
-        <h2>Mastery Challenge</h2>
-        <p>Import the random module and create a list of three different types of flowers. Use <code>random.choice()</code> to have the computer pick a random flower from your list and print it. Run the code several times—does the answer change?</p>
+        <h2>MASTERY CHALLENGE</h2>
+        <p>IMPORT THE RANDOM MODULE AND CREATE A LIST OF THREE DIFFERENT TYPES OF FLOWERS. USE <code>RANDOM.CHOICE()</code> TO HAVE THE COMPUTER PICK A RANDOM FLOWER FROM YOUR LIST AND PRINT IT. RUN THE CODE SEVERAL TIMES—DOES THE ANSWER CHANGE?</p>
         
-        <a href="level19.html" class="next-btn">I'm a Module Master! Go to Level 19 ➔</a>
+        <a href="level19.html" class="next-btn">I'M A MODULE MASTER! GO TO LEVEL 19 ➔</a>
     </div>
     
-    <p style="text-align: center;">
-        <a href="level17.html" style="color: #888; text-decoration: none; margin-right: 20px;">← Back to Level 17</a>
-        <a href="index.html" style="color: #888; text-decoration: none;">🏠 Home</a>
+    <p style="text-align: center; margin-top: 30px;">
+        <a href="level17.html" style="color: #888; text-decoration: none; margin-right: 20px; text-transform: uppercase; font-weight: 500;">← BACK TO LEVEL 17</a>
+        <a href="index.html" style="color: #888; text-decoration: none; text-transform: uppercase; font-weight: 500;">🏠 HOME</a>
     </p>
 </div>
+
+<footer class="flora-footer">
+    <h2 style="color: #c5a059; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">FLORA WORLD ACADEMY</h2>
+    <div>
+        <a href="index.html" class="footer-link">HOME</a>
+        <a href="privacy.html" class="footer-link">PRIVACY POLICY</a>
+        <a href="contact.html" class="footer-link">CONTACT US</a>
+    </div>
+    <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | WWW.FLORA-WORLD.COM</p>
+</footer>
 
 </body>
 </html>
