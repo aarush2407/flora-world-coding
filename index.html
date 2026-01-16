@@ -8,18 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
     <style>
-        /* 1. MAIN PAGE STYLES */
+        /* 1. CORE STYLES */
         body { font-family: 'Lexend', sans-serif; background: #f0fdf4; margin: 0; text-align: center; color: #1a2e05; line-height: 1.6; overflow-x: hidden; }
         
-        /* 2. THE NAV BAR STYLES */
+        /* 2. THE PREMIUM NAV BAR */
         .flora-nav-container {
             background: #0f172a; 
             padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-family: 'Lexend', sans-serif;
             margin: 15px auto;
             max-width: 95%;
             border-radius: 30px; 
@@ -30,16 +32,8 @@
             z-index: 1000;
         }
 
-        .logo-text {
-            color: #c5a059;
-            text-decoration: none;
-            font-size: 1.3rem;
-            letter-spacing: 2px;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-
-        .nav-links-group { display: flex; gap: 10px; }
+        .logo-text { color: #c5a059; text-decoration: none; font-size: 1.3rem; letter-spacing: 2px; font-weight: 500; text-transform: uppercase; }
+        .nav-links-group { display: flex; gap: 15px; align-items: center; }
 
         .flora-link {
             color: #3b82f6; 
@@ -48,128 +42,98 @@
             font-weight: 500;
             padding: 8px 18px;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            transition: 0.3s;
             text-transform: uppercase;
         }
 
-        .flora-link:hover {
-            background: #c5a059;
+        /* GOOGLE LOGIN BUTTON */
+        .google-login-btn {
+            background: white !important;
             color: #0f172a !important;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 700;
+            transition: 0.3s;
+            font-size: 0.8rem;
+            text-transform: uppercase;
         }
 
-        /* 3. HERO SECTION */
+        /* USER DISPLAY & PROGRESS BAR */
+        .user-display { color: #c5a059; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; display: none; }
+        
+        .progress-wrapper { display: none; flex-direction: column; width: 120px; text-align: left; }
+        .progress-text { font-size: 0.6rem; color: #c5a059; font-weight: 700; margin-bottom: 3px; }
+        .progress-bg { background: rgba(255,255,255,0.1); width: 100%; height: 6px; border-radius: 10px; overflow: hidden; }
+        .progress-fill { background: #2ecc71; height: 100%; width: 0%; transition: 1s ease-in-out; }
+
+        .logout-btn { display:none; background:none; border:none; color:#ef4444; cursor:pointer; font-size:0.7rem; font-weight:700; text-transform:uppercase; transition: 0.3s; }
+        .logout-btn:hover { opacity: 0.7; }
+
+        /* 3. HERO & CONTENT */
         header { 
             background: linear-gradient(135deg, #2ecc71, #27ae60, #3498db); 
-            color: white; 
-            padding: 120px 20px; 
-            border-bottom-left-radius: 50% 15%; 
-            border-bottom-right-radius: 50% 15%; 
-            margin-top: -80px;
-            position: relative;
-            z-index: 1;
+            color: white; padding: 120px 20px; border-bottom-left-radius: 50% 15%; 
+            border-bottom-right-radius: 50% 15%; margin-top: -80px; position: relative; z-index: 1;
         }
-
-        .logo-container img { 
-            width: 120px; 
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2)); 
-            animation: float 3s ease-in-out infinite; 
-            margin-top: 50px;
-        }
-
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-
-        h1 { font-family: 'Fredoka One', cursive; font-size: 4rem; margin: 10px 0; text-transform: uppercase; text-shadow: 4px 4px 0px rgba(0,0,0,0.1); }
+        .logo-container img { width: 110px; animation: float 3s ease-in-out infinite; margin-top: 50px; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         
+        h1 { font-family: 'Fredoka One', cursive; font-size: 3.5rem; margin: 10px 0; text-transform: uppercase; }
         .start-btn { 
-            display: inline-block; 
-            background: white; 
-            color: #27ae60; 
-            padding: 25px 60px; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            font-size: 1.8rem; 
-            margin-top: 30px; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-        .start-btn:hover { transform: scale(1.05); background: #0f172a; color: white; }
-
-        /* 4. FEATURES SECTION */
-        .features { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 30px; 
-            max-width: 1100px; 
-            margin: 80px auto; 
-            padding: 0 20px; 
+            display: inline-block; background: white; color: #27ae60; padding: 20px 50px; 
+            text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.5rem; 
+            margin-top: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s; text-transform: uppercase;
         }
 
-        .f-card { 
-            background: white; 
-            padding: 40px; 
-            border-radius: 35px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
-            border: 2px solid transparent;
-            transition: 0.3s;
-        }
-        .f-card:hover { border-color: #2ecc71; transform: translateY(-10px); }
-        .f-card h3 { color: #27ae60; font-family: 'Fredoka One', cursive; text-transform: uppercase; font-size: 1.5rem; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 80px auto; padding: 0 20px; }
+        .f-card { background: white; padding: 40px; border-radius: 35px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
 
-        /* 5. REVIEWS SECTION */
+        /* CERTIFICATION SECTION */
+        .cert-section { margin: 60px auto; max-width: 1100px; padding: 0 20px; }
+        .cert-btn { 
+            display: inline-block; padding: 20px 40px; border-radius: 15px; font-weight: bold; 
+            text-decoration: none; font-size: 1.2rem; transition: 0.3s;
+            border: 2px solid #cbd5e1; background: #f8fafc; color: #94a3b8; cursor: not-allowed;
+        }
+        .cert-btn.unlocked { 
+            background: #c5a059; color: #0f172a; border: 2px solid #0f172a; cursor: pointer;
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.4);
+        }
+
         .reviews-section { background: #0f172a; padding: 80px 20px; color: white; margin-top: 60px; }
-        .review-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 40px auto;
-        }
-        .review-card {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 25px;
-            text-align: left;
-            border-left: 5px solid #c5a059;
-        }
-        .stars { color: #fbbf24; margin-bottom: 10px; }
-        .review-text { font-style: italic; opacity: 0.9; font-size: 1rem; }
-        .user-name { display: block; margin-top: 15px; font-weight: bold; color: #c5a059; text-transform: uppercase; letter-spacing: 1px; }
+        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1100px; margin: 40px auto; }
+        .review-card { background: #1e293b; padding: 30px; border-radius: 25px; text-align: left; border-left: 5px solid #c5a059; }
 
-        /* 6. FOOTER STYLES */
-        .flora-footer {
-            background: #0f172a;
-            color: #cbd5e1;
-            padding: 80px 20px;
-            border-radius: 60px 60px 0 0; 
-            margin-top: 0px;
-            border-top: 3px solid #c5a059;
-            text-align: center;
-        }
-        .footer-link {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.85rem;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-        .footer-link:hover { color: #c5a059; }
-        .social-icon { color: white; font-size: 2rem; transition: 0.3s; }
-        .social-icon:hover { color: #c5a059; transform: scale(1.2); }
+        .flora-footer { background: #0f172a; color: #cbd5e1; padding: 60px 20px; border-radius: 60px 60px 0 0; border-top: 3px solid #c5a059; }
+        .footer-link { color: white; text-decoration: none; margin: 0 15px; font-size: 0.85rem; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
 <nav class="flora-nav-container">
-    <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
+    <a href="index.html" class="logo-text">FLORA WORLD</a>
     <div class="nav-links-group">
         <a href="index.html" class="flora-link">HOME</a>
-        <a href="level1.html" class="flora-link">START LEVELS</a>
-        <a href="privacy.html" class="flora-link">PRIVACY</a>
+        
+        <div id="prog-wrap" class="progress-wrapper">
+            <span class="progress-text" id="lvl-txt">LEVEL 0/25</span>
+            <div class="progress-bg"><div id="bar-fill" class="progress-fill"></div></div>
+        </div>
+
+        <button id="login-btn" class="google-login-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width="16px"> LOGIN
+        </button>
+
+        <div style="display: flex; flex-direction: column; align-items: flex-end;">
+            <div id="user-info" class="user-display"></div>
+            <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> LOGOUT</button>
+        </div>
     </div>
 </nav>
 
@@ -178,64 +142,109 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
     </div>
     <h1>FLORA WORLD CODING</h1>
-    <p style="font-size: 1.4rem; opacity: 0.9;">MASTER PYTHON THROUGH 25 LEVELS OF ARCHITECTURAL ADVENTURE.</p>
+    <p>MASTER PYTHON THROUGH 25 LEVELS OF ADVENTURE.</p>
     <a href="level1.html" class="start-btn">START LEVEL 1 🚀</a>
 </header>
 
 <div class="features">
-    <div class="f-card">
-        <h3>🌱 BEGINNER FRIENDLY</h3>
-        <p>START FROM ABSOLUTE ZERO. WE BREAK DOWN COMPLEX CODE INTO SIMPLE, NATURE-INSPIRED ANALOGIES.</p>
-    </div>
-    <div class="f-card">
-        <h3>🎮 GAMIFIED PATHWAY</h3>
-        <p>EVERY LESSON IS A NEW LEVEL TO UNLOCK. EARN YOUR WAY FROM A SEEDLING TO A PYTHON ARCHITECT.</p>
-    </div>
-    <div class="f-card">
-        <h3>🏆 CERTIFICATION</h3>
-        <p>REACH LEVEL 25 AND EARN YOUR PYTHON MASTERY CREDENTIALS TO BOOST YOUR PORTFOLIO.</p>
-    </div>
+    <div class="f-card"><h3>🌱 BEGINNER FRIENDLY</h3><p>START FROM ZERO. WE SIMPLIFY COMPLEX CODE.</p></div>
+    <div class="f-card"><h3>🎮 GAMIFIED</h3><p>EVERY LESSON IS A NEW LEVEL TO UNLOCK.</p></div>
+    <div class="f-card"><h3>🏆 CERTIFIED</h3><p>REACH LEVEL 25 AND EARN YOUR PYTHON MASTERY CREDENTIALS.</p></div>
 </div>
 
-
+<div class="cert-section">
+    <a href="#" id="cert-link" class="cert-btn">
+        <i class="fas fa-lock" id="cert-icon"></i> CLAIM MASTER CERTIFICATE
+    </a>
+    <p id="cert-msg" style="margin-top: 15px; font-size: 0.8rem; color: #64748b;">Complete Level 25 to unlock your certificate.</p>
+</div>
 
 <section class="reviews-section">
-    <h2 style="font-family: 'Fredoka One'; font-size: 2.5rem; text-transform: uppercase; color: #c5a059;">WHAT OUR LEARNERS SAY</h2>
+    <h2 style="color: #c5a059;">LEARNER REVIEWS</h2>
     <div class="review-grid">
         <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p class="review-text">"FLORA WORLD CODING TRANSFORMED HOW I VIEW CODING. THE LEVELS ARE ADDICTIVE AND THE EXPLANATIONS ARE CRYSTAL CLEAR!"</p>
-            <span class="user-name">- SARAH K., JUNIOR DEVELOPER</span>
+            <div style="color:#fbbf24;">★★★★★</div>
+            <p>"ADDICTIVE LEVELS AND CLEAR EXPLANATIONS!"</p>
+            <span style="color:#c5a059;">- SARAH K.</span>
         </div>
         <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p class="review-text">"I TRIED MANY COURSES, BUT THE GAMIFIED SYSTEM HERE KEPT ME MOTIVATED UNTIL THE GRADUATION LEVEL. HIGHLY RECOMMEND!"</p>
-            <span class="user-name">- JAMES L., STUDENT</span>
-        </div>
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p class="review-text">"THE TRANSITION FROM BASIC LOOPS TO OBJECT-ORIENTED PROGRAMMING WAS SO SMOOTH. THE GARDEN ANALOGIES REALLY WORK!"</p>
-            <span class="user-name">- MARIA R., TECH TRANSITIONER</span>
+            <div style="color:#fbbf24;">★★★★★</div>
+            <p>"THE BEST WAY TO LEARN PYTHON BASICS."</p>
+            <span style="color:#c5a059;">- JAMES L.</span>
         </div>
     </div>
 </section>
 
 <footer class="flora-footer">
-    <h2 style="color: #c5a059; font-family: 'Lexend'; font-weight: 500; margin-bottom: 20px; text-transform: uppercase;">JOIN THE COMMUNITY</h2>
-    
-    <a href="https://instagram.com/floraworldcoding" class="social-icon">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <p style="margin: 10px 0 30px;">@FLORA_WORLD_CODING</p>
-
-    <div class="footer-nav">
-        <a href="about.html" class="footer-link">ABOUT US</a> | 
-        <a href="privacy.html" class="footer-link">PRIVACY POLICY</a> | 
+    <div>
+        <a href="about.html" class="footer-link">ABOUT</a> | 
+        <a href="privacy.html" class="footer-link">PRIVACY</a> | 
         <a href="contact.html" class="footer-link">CONTACT</a>
     </div>
-    
-    <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5; text-transform: uppercase;">&copy; 2026 FLORA WORLD CODING | THE GLOBAL STANDARD IN PYTHON EDUCATION</p>
+    <p style="margin-top: 20px; opacity: 0.5;">&copy; 2026 FLORA WORLD CODING</p>
 </footer>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAgR-WTRgSVYre3zX6V4-Ma7IOgyTnPIls",
+    authDomain: "flora-world-coding.firebaseapp.com",
+    projectId: "flora-world-coding",
+    storageBucket: "flora-world-coding.firebasestorage.app",
+    messagingSenderId: "877749723829",
+    appId: "1:877749723829:web:3bf2a3c4675dab3b0254fc"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  const loginBtn = document.getElementById('login-btn');
+  const logoutBtn = document.getElementById('logout-btn');
+  const userInfo = document.getElementById('user-info');
+  const progWrap = document.getElementById('prog-wrap');
+  const barFill = document.getElementById('bar-fill');
+  const lvlTxt = document.getElementById('lvl-txt');
+  
+  const certLink = document.getElementById('cert-link');
+  const certIcon = document.getElementById('cert-icon');
+  const certMsg = document.getElementById('cert-msg');
+
+  loginBtn.onclick = () => {
+    auth.signInWithPopup(provider).catch(() => alert("Use a live URL (like GitHub) to login."));
+  };
+
+  logoutBtn.onclick = () => { auth.signOut(); };
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      loginBtn.style.display = 'none';
+      userInfo.style.display = 'block';
+      logoutBtn.style.display = 'block';
+      progWrap.style.display = 'flex';
+      userInfo.innerHTML = `<i class="fas fa-user-circle"></i> ${user.displayName.split(' ')[0].toUpperCase()}`;
+      
+      // LOGIC: UPDATE LEVEL (SET TO 25 TO SEE UNLOCK)
+      let currentLevel = 12; 
+      lvlTxt.innerText = `LEVEL ${currentLevel}/25`;
+      barFill.style.width = (currentLevel/25)*100 + "%";
+
+      // CERTIFICATE UNLOCK LOGIC
+      if(currentLevel >= 25) {
+          certLink.classList.add('unlocked');
+          certIcon.className = "fas fa-award";
+          certMsg.innerText = "Congratulations! You are a Python Architect.";
+          certLink.href = "certificate.html";
+      }
+    } else {
+      loginBtn.style.display = 'flex';
+      userInfo.style.display = 'none';
+      logoutBtn.style.display = 'none';
+      progWrap.style.display = 'none';
+      certLink.classList.remove('unlocked');
+      certIcon.className = "fas fa-lock";
+    }
+  });
+</script>
 
 </body>
 </html>
