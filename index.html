@@ -1,107 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896125009058837" crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-3896125009058837">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLORA WORLD CODING | MASTER PYTHON ADVENTURE</title>
     <link rel="icon" href="https://img.icons8.com/emoji/48/hibiscus.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="env.js"></script>
+    
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
 
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Lexend', sans-serif; background: #f0fdf4; margin: 0; text-align: center; color: #1a2e05; overflow-x: hidden; }
-
-        /* NAVIGATION */
-        .flora-nav-container {
-            background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px);
-            padding: 15px 30px; display: flex; justify-content: space-between; align-items: center;
-            margin: 15px auto; max-width: 95%; border-radius: 30px; 
-            border: 1px solid rgba(197, 160, 89, 0.3); position: sticky; top: 15px; z-index: 1000;
-        }
+        .flora-nav-container { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; margin: 15px auto; max-width: 95%; border-radius: 30px; border: 1px solid rgba(197, 160, 89, 0.3); position: sticky; top: 15px; z-index: 1000; }
         .logo-text { color: #c5a059; text-decoration: none; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
         .logo-text:hover { color: #fff; text-shadow: 0 0 10px #c5a059; }
-
         .nav-links-group { display: flex; gap: 20px; align-items: center; }
         .home-btn-nav { color: white; text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
         .home-btn-nav:hover { color: #c5a059; transform: translateY(-2px); }
-
-        .google-login-btn {
-            background: white !important; color: #0f172a !important; border: none; cursor: pointer; 
-            display: flex; align-items: center; gap: 10px; padding: 8px 20px; border-radius: 50px; 
-            font-weight: 700; font-size: 0.8rem; text-transform: uppercase;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+        .google-login-btn { background: white !important; color: #0f172a !important; border: none; cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .google-login-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(197, 160, 89, 0.6); }
-
-        /* HERO SECTION */
-        header { 
-            background: linear-gradient(135deg, #2ecc71, #27ae60, #3498db); color: white; padding: 140px 20px; 
-            border-bottom-left-radius: 50% 12%; border-bottom-right-radius: 50% 12%; margin-top: -100px;
-        }
-        
-        /* RESTORED PYTHON FLOATING ANIMATION */
-        .logo-container img { 
-            width: 110px; 
-            animation: float 3s ease-in-out infinite; 
-        }
-        @keyframes float { 
-            0%, 100% { transform: translateY(0); } 
-            50% { transform: translateY(-20px); } 
-        }
-
+        header { background: linear-gradient(135deg, #2ecc71, #27ae60, #3498db); color: white; padding: 140px 20px; border-bottom-left-radius: 50% 12%; border-bottom-right-radius: 50% 12%; margin-top: -100px; }
+        .logo-container img { width: 110px; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         h1 { font-family: 'Fredoka One', cursive; font-size: 3.5rem; margin: 10px 0; text-transform: uppercase; }
-        
         .live-badge { display: inline-flex; align-items: center; background: rgba(0,0,0,0.2); padding: 6px 16px; border-radius: 50px; font-size: 0.75rem; margin-top: 15px; font-weight: 600; }
         .pulse-dot { width: 8px; height: 8px; background: #2ecc71; border-radius: 50%; margin-right: 10px; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
-
-        /* MAIN BUTTON WITH GOOGLE LOGO */
-        .main-action-btn { 
-            display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-            background: white; color: #27ae60; padding: 20px 45px; border-radius: 50px; 
-            font-weight: 800; font-size: 1.4rem; margin-top: 35px; cursor: pointer; border: none; 
-            text-transform: uppercase; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
+        .main-action-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: white; color: #27ae60; padding: 20px 45px; border-radius: 50px; font-weight: 800; font-size: 1.4rem; margin-top: 35px; cursor: pointer; border: none; text-transform: uppercase; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .main-action-btn:hover { transform: scale(1.08) translateY(-5px); box-shadow: 0 15px 35px rgba(197, 160, 89, 0.4); }
         .main-action-btn img { width: 24px; height: 24px; }
-
         .guest-link { display: block; margin-top: 20px; color: white; text-decoration: underline; font-size: 0.9rem; cursor: pointer; opacity: 0.8; transition: 0.3s; }
         .guest-link:hover { color: #c5a059; }
-
-        /* REVIEWS SECTION */
         .reviews-section { background: #0f172a; padding: 80px 0; color: white; margin-top: 100px; overflow: hidden; }
         .carousel-wrapper { display: flex; align-items: center; justify-content: center; width: 100%; position: relative; }
         .carousel-track { display: flex; align-items: center; justify-content: center; width: fit-content; padding: 50px 0; }
-        
-        .review-card {
-            min-width: 280px; height: 450px; background: rgba(255, 255, 255, 0.05);
-            border-radius: 40px; padding: 40px 20px; display: flex; flex-direction: column; 
-            justify-content: center; border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0.3; transform: scale(0.85); margin: 0 -60px; z-index: 1; backdrop-filter: blur(5px);
-        }
-        .review-card.active {
-            opacity: 1; transform: scale(1.1); background: rgba(255, 255, 255, 0.12);
-            border-color: #c5a059; box-shadow: 0 0 60px rgba(0,0,0,0.6); z-index: 10; margin: 0 20px;
-        }
+        .review-card { min-width: 280px; height: 450px; background: rgba(255, 255, 255, 0.05); border-radius: 40px; padding: 40px 20px; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); opacity: 0.3; transform: scale(0.85); margin: 0 -60px; z-index: 1; backdrop-filter: blur(5px); }
+        .review-card.active { opacity: 1; transform: scale(1.1); background: rgba(255, 255, 255, 0.12); border-color: #c5a059; box-shadow: 0 0 60px rgba(0,0,0,0.6); z-index: 10; margin: 0 20px; }
         .stars { color: #fbbf24; font-size: 1.2rem; margin-bottom: 15px; }
-
-        /* FOOTER */
         .flora-footer { background: #0f172a; color: #cbd5e1; padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
         .footer-insta { color: #E1306C; font-size: 3rem; margin-bottom: 20px; display: inline-block; transition: 0.3s; }
         .footer-insta:hover { transform: scale(1.2) rotate(5deg); }
-        
         .footer-links { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
         .footer-links a { color: white; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
         .footer-links a:hover { color: #c5a059; }
-        
         .user-avatar { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #c5a059; margin-right: 8px; }
         .user-display { display: none; align-items: center; color: #c5a059; font-weight: 700; }
     </style>
@@ -112,42 +58,37 @@
     <a href="index.html" class="logo-text">FLORA WORLD CODING</a>
     <div class="nav-links-group">
         <a href="index.html" class="home-btn-nav">HOME</a>
-        <button id="login-btn" class="google-login-btn">
-            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="16px"> LOGIN
-        </button>
+        <button id="login-btn" class="google-login-btn"><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="16px"> LOGIN</button>
         <div id="user-info" class="user-display"></div>
         <button id="logout-btn" style="display:none; color:#ef4444; background:none; border:none; cursor:pointer; font-weight:700;">LOGOUT</button>
     </div>
 </nav>
 
 <header>
-    <div class="logo-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
-    </div>
+    <div class="logo-container"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo"></div>
     <h1>FLORA WORLD CODING</h1>
-    <div class="live-badge">
-        <span class="pulse-dot"></span> 1,240 STUDENTS CURRENTLY LEARNING
-    </div>
+    <div class="live-badge"><span class="pulse-dot"></span> 1,240 STUDENTS CURRENTLY LEARNING</div>
     <p style="margin-top: 20px;">MASTER PYTHON THROUGH 25 LEVELS OF ADVENTURE.</p>
-    
-    <button id="hero-action-btn" class="main-action-btn">
-        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"> LOGIN TO START
-    </button>
-    
+    <button id="hero-action-btn" class="main-action-btn"><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"> LOGIN TO START</button>
     <span id="guest-btn" class="guest-link">CONTINUE AS GUEST</span>
 </header>
 
+<div id="ad-container-top" style="margin: 40px auto; display: flex; justify-content: center;">
+    <script type="text/javascript">
+        if (typeof FLORA_SECRETS !== 'undefined') {
+            atOptions = { 'key' : FLORA_SECRETS.AD_KEY, 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
+        }
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/32d9de4ced6f8278d43677b8f7fd5145/invoke.js"></script>
+</div>
+
 <section class="reviews-section">
     <h2 style="color: #c5a059; font-family: 'Fredoka One'; font-size: 2.5rem; margin-bottom: 40px;">STUDENT STORIES</h2>
-    <div class="carousel-wrapper">
-        <div class="carousel-track" id="carouselTrack"></div>
-    </div>
+    <div class="carousel-wrapper"><div class="carousel-track" id="carouselTrack"></div></div>
 </section>
 
 <footer class="flora-footer">
-    <a href="https://instagram.com/floraworldcoding" target="_blank" class="footer-insta">
-        <i class="fab fa-instagram"></i>
-    </a>
+    <a href="https://instagram.com/floraworldcoding" target="_blank" class="footer-insta"><i class="fab fa-instagram"></i></a>
     <p>Follow us @floraworldcoding</p>
     <div class="footer-links">
         <a href="about.html">ABOUT</a>
@@ -158,54 +99,27 @@
 </footer>
 
 <script>
-    const reviews = [
-        { name: "SARAH K.", text: "ADDICTIVE LEVELS AND CLEAR EXPLANATIONS!" },
-        { name: "JAMES L.", text: "THE BEST WAY TO LEARN PYTHON BASICS." },
-        { name: "EMILY R.", text: "I NEVER THOUGHT CODING COULD BE THIS FUN." },
-        { name: "MICHAEL T.", text: "THE PROGRESS BAR KEEPS ME MOTIVATED!" },
-        { name: "AARON B.", text: "PERFECT FOR ABSOLUTE BEGINNERS." },
-        { name: "JESSICA P.", text: "FLORA WORLD MADE PYTHON FEEL LIKE A GAME." },
-        { name: "KEVIN M.", text: "FINALLY A SITE THAT DOESN'T BORE ME." }
-    ];
-
+    const reviews = [{ name: "SARAH K.", text: "ADDICTIVE LEVELS AND CLEAR EXPLANATIONS!" },{ name: "JAMES L.", text: "THE BEST WAY TO LEARN PYTHON BASICS." },{ name: "EMILY R.", text: "I NEVER THOUGHT CODING COULD BE THIS FUN." },{ name: "MICHAEL T.", text: "THE PROGRESS BAR KEEPS ME MOTIVATED!" },{ name: "AARON B.", text: "PERFECT FOR ABSOLUTE BEGINNERS." },{ name: "JESSICA P.", text: "FLORA WORLD MADE PYTHON FEEL LIKE A GAME." },{ name: "KEVIN M.", text: "FINALLY A SITE THAT DOESN'T BORE ME." }];
     const track = document.getElementById('carouselTrack');
+    function renderCarousel() { track.innerHTML = ''; const displaySet = [reviews[(reviews.length - 1) % reviews.length], reviews[0], reviews[1 % reviews.length]]; displaySet.forEach((r, i) => { const card = document.createElement('div'); card.className = `review-card ${i === 1 ? 'active' : ''}`; card.innerHTML = `<div class="stars">★★★★★</div><p>"${r.text}"</p><span>- ${r.name}</span>`; track.appendChild(card); }); }
+    function rotateCarousel() { reviews.push(reviews.shift()); renderCarousel(); }
+    renderCarousel(); setInterval(rotateCarousel, 4000);
 
-    function renderCarousel() {
-        track.innerHTML = '';
-        const displaySet = [
-            reviews[(reviews.length - 1) % reviews.length], 
-            reviews[0],                                     
-            reviews[1 % reviews.length]                     
-        ];
-        displaySet.forEach((r, i) => {
-            const card = document.createElement('div');
-            card.className = `review-card ${i === 1 ? 'active' : ''}`;
-            card.innerHTML = `<div class="stars">★★★★★</div><p>"${r.text}"</p><span>- ${r.name}</span>`;
-            track.appendChild(card);
-        });
+    // Using Secrets from env.js
+    if (typeof FLORA_SECRETS !== 'undefined') {
+        const firebaseConfig = {
+            apiKey: FLORA_SECRETS.FIREBASE_KEY,
+            authDomain: "flora-world-coding.firebaseapp.com",
+            projectId: "flora-world-coding",
+            storageBucket: "flora-world-coding.firebasestorage.app",
+            messagingSenderId: "877749723829",
+            appId: "1:877749723829:web:3bf2a3c4675dab3b0254fc"
+        };
+        firebase.initializeApp(firebaseConfig);
     }
 
-    function rotateCarousel() {
-        reviews.push(reviews.shift());
-        renderCarousel();
-    }
-
-    renderCarousel();
-    setInterval(rotateCarousel, 4000);
-
-    const firebaseConfig = {
-        apiKey: "AIzaSyAgR-WTRgSVYre3zX6V4-Ma7IOgyTnPIls",
-        authDomain: "flora-world-coding.firebaseapp.com",
-        projectId: "flora-world-coding",
-        storageBucket: "flora-world-coding.firebasestorage.app",
-        messagingSenderId: "877749723829",
-        appId: "1:877749723829:web:3bf2a3c4675dab3b0254fc"
-    };
-
-    firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const provider = new firebase.auth.GoogleAuthProvider();
-
     const loginBtn = document.getElementById('login-btn');
     const logoutBtn = document.getElementById('logout-btn');
     const userInfo = document.getElementById('user-info');
@@ -219,19 +133,18 @@
 
     auth.onAuthStateChanged((user) => {
         if (user) {
-            loginBtn.style.display = 'none';
-            userInfo.style.display = 'flex';
-            logoutBtn.style.display = 'block';
+            loginBtn.style.display = 'none'; userInfo.style.display = 'flex'; logoutBtn.style.display = 'block';
             userInfo.innerHTML = `<img src="${user.photoURL}" class="user-avatar"><span>${user.displayName.split(' ')[0]}</span>`;
             heroBtn.innerHTML = `<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"> CONTINUE ADVENTURE`;
             heroBtn.onclick = () => window.location.href = "level1.html";
         } else {
-            loginBtn.style.display = 'flex';
-            userInfo.style.display = 'none';
-            logoutBtn.style.display = 'none';
+            loginBtn.style.display = 'flex'; userInfo.style.display = 'none'; logoutBtn.style.display = 'none';
             heroBtn.innerHTML = `<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"> LOGIN TO START`;
         }
     });
 </script>
+
+<script src="https://pl28499481.effectivegatecpm.com/63/79/59/6379597fa8840e130fa1719522010504.js"></script>
+
 </body>
 </html>
